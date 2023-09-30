@@ -86,7 +86,7 @@
             </table>
           </div>
           <div class="d-flex justify-content-end align-items-center">
-            <div class="input-group mb-3" style="max-width:450px" v-if="cart.total !== 0">
+            <div class="input-group mb-3" style="max-width:400px" v-if="cart.total !== 0">
               <input type="text" class="form-control" v-model="coupon_code" placeholder="請輸入優惠碼">
               <button class="btn btn-primary" type="button" @click="addCouponCode">
                   套用優惠碼
@@ -94,7 +94,7 @@
             </div>
           </div>
           <div class="d-flex justify-content-end align-items-center mb-4">
-            <div class="fs-5 fw-bold text-primary"><i class="bi bi-globe pe-2"></i>輸入優惠碼 <span class="fs-4 fw-bold text-secondary">funnietravel</span> 即享 <span class="fs-4 fw-bold text-secondary">85 </span>折優惠</div>
+            <div class="fs-6 fw-bold text-primary"><i class="bi bi-globe pe-2"></i>輸入優惠碼 <span class="fs-5 fw-bold text-secondary">funnietravel</span> 即享 <span class="fs-5 fw-bold text-secondary">85 </span>折優惠</div>
           </div>
           <div class="d-flex justify-content-between mt-4 mb-4" v-if="cart.total !== 0">
             <router-link class="btn btn-outline-primary" to="/user">繼續選購</router-link>
