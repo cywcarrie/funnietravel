@@ -9,7 +9,7 @@
         </div>
       </div>
   </LoadingVue>
-  <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner3 container-fluid">
+  <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner2 container-fluid">
     <h2 class="position-absolute text-center text-white fw-bold">結帳流程</h2>
   </div>
   <section class="mb-5">

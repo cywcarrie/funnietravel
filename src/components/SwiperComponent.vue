@@ -81,10 +81,10 @@ export default {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`
       this.isLoading = true
       this.$http.get(url).then((response) => {
+        this.isLoading = false
         this.products = response.data.products
         this.getSwiper()
         console.log('products:', response)
-        this.isLoading = false
       })
     },
     // 隨機取6筆資料

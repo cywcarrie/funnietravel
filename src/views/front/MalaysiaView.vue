@@ -8,8 +8,8 @@
         </div>
       </div>
   </LoadingVue>
-  <div class="container">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 row-cols-xl-3">
+  <div class="container px-0">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
       <div class="col mb-4" v-for="item in products" :key="item.id">
         <div class=" card product-card box-shadow w-100 h-100" style="width: 18rem">
           <img

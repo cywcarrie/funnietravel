@@ -9,7 +9,6 @@
 
 .home-content{
   position: absolute;
-  top: 35vh;
   left: 0;
   right: 0;
   margin: auto;
@@ -41,6 +40,36 @@
 .homebtn-img4{
   background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(https://storage.googleapis.com/vue-course-api.appspot.com/funnietravel-api/1694093178196.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=YbuKPdhdTIsabdJTXrmZFnt60N51k7IVf6GfJqCB3%2FbII7hUtAzKu2xqCU2Bi1okGizpW3CHxa3VC0inmrsSt8FHakqRt24dhEhmGARC8%2BI3%2FpUjASn546gbIiMOjArIMT%2BD2l3FkIvXnP%2FrCJ%2FWygUr%2BVwxdpBz5m1jGDSzR%2BLps7CQkr2kRiifNzTuaQuiE72U0mvgY6awTloqameaB4pKmSjWWu6ZMD%2BB5fIB9vlZ7965jAxWclD3rTctEuArSVg2tfrNaAv4QWGeiwKqhZc1cYeuvzfuxt0jYiOnYXYCfngbfcG%2Fd8AoY71Zk0dmoWFQGiy9fLQ1ySWwj4lnTQ%3D%3D);
 }
-.card-pointer{
-  cursor: pointer;
+
+.bounce {
+  animation: bounce 2s ease infinite;
+}
+
+@keyframes bounce {
+    70% { transform:translateY(0%); }
+    80% { transform:translateY(-15%); }
+    90% { transform:translateY(0%); }
+    95% { transform:translateY(-7%); }
+    97% { transform:translateY(0%); }
+    99% { transform:translateY(-3%); }
+    100% { transform:translateY(0); }
+}
+
+.more{
+  top: 55vh;
+  &:active{
+    color: white !important;
+  }
+}
+
+.about{
+  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(https://images.unsplash.com/photo-1575642158817-5bc47aea404f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2748&q=80) no-repeat fixed;  
+  background-size: cover;
+  background-position: center;
+}
+
+.home-bottom-content{
+  background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(https://storage.googleapis.com/vue-course-api.appspot.com/funnietravel-api/1693569481654.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=cW0TewEQyGThvIWTGtAgTTpeHhA%2BOFLNphIxjExqHe1Vm5D1J5vPnzhC3tZhxJnTUuN9nuamFelQRsO6mcr6oFuUcghxauZ5tQzpgI%2BBFuxkCG66bQUHoGRD%2FZpPxwbx8pAqfokK2zDmasfIUhl3EXv%2B4dLZ%2FNH12tG270gHtpyvkDt25zxsvmPzt%2B5rCeWkvvvSnXrBHTLmbaYys%2F%2BCEIvRHSphEn5EyGIIzHfhrtmz%2FfHb6dWBAcFz0h6NOFWanSa4rNKLPth06VbGcrW7FpSA3KsPWrAZqtAq15Qrg8JE1M1ordAEyIa5A7SKFhc4aYFc%2FaAH6NljEWtbYOq%2Bhg%3D%3D) no-repeat fixed;  
+  background-size: cover;
+  background-position: center;
 }

@@ -12,7 +12,7 @@
     <div class="container">
       <router-link to="/" class="navbar-brand me-auto d-flex align-items-center"
           ><img src="../assets/img/logo.png" alt="funnie-logo"
-          style ="height:45px;"/><h1 class="logo text-primary fw-bold mb-0 px-2">Funnie</h1></router-link>
+          style ="height:45px;"/><h1 class="logo text-primary fw-bolder mb-0 px-2">Funnie</h1></router-link>
       <div class=" navbar-nav d-flex flex-row">
         <router-link to="/favorite"  class="nav-link text-primary hover-nav me-3 me-lg-0"
         ><i class="bi bi-heart-fill fs-4"></i></router-link>

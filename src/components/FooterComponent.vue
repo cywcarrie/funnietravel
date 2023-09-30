@@ -29,8 +29,8 @@
             <h5 class="text-white fw-bold">聯絡 Funnie</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-geo-alt-fill text-secondary"></i>台北</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-telephone-fill text-secondary"></i>123-456-789 </a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-telephone-fill text-secondary"></i>678-901-234 </a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-telephone-fill text-secondary"></i>123-456-789</a></li>
+              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-telephone-fill text-secondary"></i>000-000-000</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-person-fill text-secondary"></i>9:00 - 18:00</a></li>
             </ul>
           </div>
@@ -38,7 +38,7 @@
           <div class="col-lg-5 offset-lg-1 mb-3">
             <form>
               <h5 class="text-white fw-bold">訂閱 Funnie</h5>
-              <p class="text-white text-nowrap">即刻訂閱我們，搶先收到最新最熱門的旅遊行程資訊！</p>
+              <p class="text-white">訂閱我們，搶先收到最新最熱門的旅遊行程資訊！</p>
               <div class="d-flex flex-column flex-sm-row w-100 gap-2">
                 <label for="newsletter1" class="visually-hidden">Email address</label>
                 <input id="newsletter1" type="text" class="form-control" placeholder="Email address">

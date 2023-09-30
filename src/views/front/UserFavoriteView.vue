@@ -9,7 +9,7 @@
         </div>
       </div>
   </LoadingVue>
-  <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner2 container-fluid">
+  <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner1 container-fluid">
     <h2 class="position-absolute text-center text-white fw-bold">我的最愛</h2>
   </div>
   <section class="mb-5">

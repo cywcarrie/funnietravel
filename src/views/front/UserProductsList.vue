@@ -7,7 +7,7 @@
     <div class="container">
       <div class="row d-flex justify-content-center align-items-center border rounded-2 py-3 mx-0 bg-light">
         <div class="col-md-7 pt-4 fs-4">
-          <h2 class="text-primary fw-bold" >歡慶 <span class="text-secondary fw-bold">Funnie Travel</span> 盛大開幕</h2>
+          <h2 class="text-primary fw-bold" >歡慶 <span class="text-secondary fw-bolder">Funnie Travel</span> 盛大開幕</h2>
           <p>開幕慶期間結帳時輸入優惠碼 <span class=" py-1 px-2 lh-lg text-primary text-strong fw-bold">funnietravel</span>，即可享 <span class="text-strong text-primary fw-bold">85</span> 折優惠!</p>
         </div>
         <div class="col-md-4 text-center d-none d-md-block">
@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="row my-5">
-        <div class="col-lg-3 px-3 mb-4 mb-lg-0">
+        <div class="col-lg-3 mb-4 mb-lg-0">
           <div class="list-group text-start fw-bold">
             <router-link to="all" class="list-group-item list-group-item-action">
               <i class="bi bi-globe me-2 "></i>
@@ -40,7 +40,7 @@
           </div>
         </div>
         <div class="col-lg-9">
-        <router-view></router-view>
+          <router-view></router-view>
         </div>
       </div>
     </div>

@@ -9,11 +9,30 @@
       </div>
     </div>
   </LoadingVue>
-  <section class="my-5">
+  <section class="mt-5">
+    <!--首頁封面-->
     <div class="home d-flex justify-content-center align-items-center position-relative">
       <div class="text-center text-light home-content border">
         <h2 class="mb-3 fw-bolder fs-1 text-nowrap">探索美麗的東南亞</h2>
-        <h5 class="text-nowrap"><span class="fw-bold">Funnie</span> 給您輕鬆快樂自由行</h5>
+        <h5 class="text-nowrap"><span class="fw-bold fs-4">Funnie</span> 給您輕鬆快樂自由行</h5>
+      </div>
+      <a
+      class="d-flex flex-column align-items-center text-white mt-5 pt-5 more position-absolute"
+      href="#about">
+        <span class="bounce">
+          <i class="bi bi-caret-down-fill text-white fs-1"></i>
+        </span>
+        <span class="fw-bolder more-active">MORE</span>
+      </a>
+    </div>
+    <!--關於Funnie-->
+    <div class="py-5 about" id="about">
+      <div class="container">
+        <h2 class="text-center fw-bolder mb-5 text-secondary text-nowrap">關於 Funnie Travel</h2>
+        <div class="text-center text-white px-3 px-md-5">
+          <h3 class="fw-bolder mb-4">東南亞自由行專家</h3>
+          <p class="fs-5"><sapn class="fw-bolder fs-4">Funnie Travel</sapn> 是由一群來自台灣各地熱愛自由行，熱愛東南亞的專業團隊所組成，共同致力於提供客戶最優質、最專業與最安全的旅遊行程，讓旅人能夠放心感受旅行的美好。我們深信自由行是最能貼近當地生活及深入地探索當地文化和風土人情的旅遊方式，期望每個熱愛旅行的您，都能與我們一樣，享受自由行的美好。</p>
+        </div>
       </div>
     </div>
     <!--地區選單-->
@@ -64,7 +83,7 @@
         <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">Funnie 帶您 HEN 瘋玩新馬</h2>
         <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-xl-4">
           <div class="col mb-3 mb-xl-0">
-            <div class=" card product-card border border-primary card-pointer"
+            <div class=" card product-card border border-primary cursor-pointer"
             @click.prevent="goToSingapore1">
               <img
               style=" height: 180px; background-position: center"
@@ -85,7 +104,7 @@
             </div>
           </div>
           <div class="col mb-3 mb-xl-0">
-            <div class=" card product-card border border-primary card-pointer"
+            <div class=" card product-card border border-primary cursor-pointer"
             @click.prevent="goToSingapore2">
               <img
               style=" height: 180px; background-position: center"
@@ -106,7 +125,7 @@
             </div>
           </div>
           <div class="col mb-3 mb-xl-0">
-            <div class=" card product-card border border-primary card-pointer"
+            <div class=" card product-card border border-primary cursor-pointer"
             @click.prevent="goToMalaysia1">
               <img
               style=" height: 180px; background-position: center"
@@ -127,7 +146,7 @@
             </div>
           </div>
           <div class="col mb-3 mb-xl-0">
-            <div class=" card product-card border border-primary card-pointer"
+            <div class=" card product-card border border-primary cursor-pointer"
             @click.prevent="goToMalaysia2">
               <img
               style=" height: 180px; background-position: center"
@@ -157,7 +176,7 @@
         <h2 class="text-center fw-bolder my-5 text-primary text-nowrap">Funnie 帶您 FUN 鬆遊泰峇</h2>
         <div class="row justify-content-center row-cols-1 row-cols-md-2 row-cols-xl-4">
           <div class="col mb-3 mb-xl-0">
-            <div class=" card product-card border border-secondary card-pointer"
+            <div class=" card product-card border border-secondary cursor-pointer"
             @click.prevent="goToBali1">
               <img
               style=" height: 180px; background-position: center"
@@ -178,7 +197,7 @@
             </div>
           </div>
           <div class="col mb-3 mb-xl-0">
-            <div class=" card product-card border border-secondary card-pointer"
+            <div class=" card product-card border border-secondary cursor-pointer"
             @click.prevent="goToBali2">
               <img
               style=" height: 180px; background-position: center"
@@ -199,7 +218,7 @@
             </div>
           </div>
           <div class="col mb-3 mb-xl-0">
-            <div class=" card product-card border border-secondary card-pointer"
+            <div class=" card product-card border border-secondary cursor-pointer"
             @click.prevent="goToThailand1">
               <img
               style=" height: 180px; background-position: center"
@@ -220,7 +239,7 @@
             </div>
           </div>
           <div class="col mb-3 mb-xl-0">
-            <div class=" card product-card border border-secondary card-pointer"
+            <div class=" card product-card border border-secondary cursor-pointer"
             @click.prevent="goToThailand2">
               <img
               style=" height: 180px; background-position: center"
@@ -245,6 +264,15 @@
           <router-link to='/user/all' class="btn btn-primary rounded-pill">
             更多行程<i class="bi bi-caret-right-fill"></i>
             </router-link>
+        </div>
+      </div>
+    </div>
+    <!--Funnie-->
+    <div class="py-5 mt-5 home-bottom-content">
+      <div class="container">
+        <h2 class="text-center fw-bolder py-3 text-secondary">旅行是唯一讓我們花錢，心靈卻變得更富有的事物</h2>
+        <div class="text-center text-white px-3 px-md-5">
+          <p class="fw-bolder py-3 fs-3">跟著 <span class="fs-2">Funnie</span> 一起去美麗的東南亞自由行，享受自由行帶給我們的美好</p>
         </div>
       </div>
     </div>
