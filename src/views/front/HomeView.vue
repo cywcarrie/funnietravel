@@ -16,14 +16,11 @@
         <h2 class="mb-3 fw-bolder fs-1 text-nowrap">探索美麗的東南亞</h2>
         <h5 class="text-nowrap"><span class="fw-bold fs-4">Funnie</span> 給您輕鬆快樂自由行</h5>
       </div>
-      <a
-      class="d-flex flex-column align-items-center text-white mt-5 pt-5 more position-absolute"
-      href="#about">
-        <span class="bounce">
-          <i class="bi bi-caret-down-fill text-white fs-1"></i>
+      <div class="d-flex flex-column align-items-center text-white mt-5 pt-5 more position-absolute">
+        <span class="bounce-out-down">
+          <i class="bi bi-chevron-double-down fs-1"></i>
         </span>
-        <span class="fw-bolder more-active">MORE</span>
-      </a>
+      </div>
     </div>
     <!--關於Funnie-->
     <div class="py-5 about" id="about">
@@ -32,6 +29,9 @@
         <div class="text-center text-white px-3 px-md-5">
           <h3 class="fw-bolder mb-4">東南亞自由行專家</h3>
           <p class="fs-5"><sapn class="fw-bolder fs-4">Funnie Travel</sapn> 是由一群來自台灣各地熱愛自由行，熱愛東南亞的專業團隊所組成，共同致力於提供客戶最優質、最專業與最安全的旅遊行程，讓旅人能夠放心感受旅行的美好。我們深信自由行是最能貼近當地生活及深入地探索當地文化和風土人情的旅遊方式，期望每個熱愛旅行的您，都能與我們一樣，享受自由行的美好。</p>
+        </div>
+        <div class="text-center pt-3">
+          <router-link class="btn btn-outline-secondary btn-lg fw-bold" to="/about">關於我們</router-link>
         </div>
       </div>
     </div>

@@ -10,7 +10,7 @@
     </div>
   </LoadingVue>
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner1 container-fluid">
-    <h2 class="position-absolute text-center text-white fw-bold">行程資訊</h2>
+    <h2 class="position-absolute text-center text-white fw-bolder">行程資訊</h2>
   </div>
   <section class="mb-5">
     <div class="container">
@@ -104,6 +104,14 @@
         </div>
       </div>
     </div>
+    <!--Swiper卡片-->
+    <div class=" mt-5 bg-white">
+      <div class="container">
+        <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">熱門行程</h2>
+        <Swiper></Swiper>
+      </div>
+    </div>
+    <!--ScrollTop-->
     <ScrollTop></ScrollTop>
   </section>
   <Footer></Footer>
@@ -111,12 +119,14 @@
 
 <script>
 import Navbar from '@/components/UserNavBar.vue'
+import Swiper from '@/components/SwiperComponent.vue'
 import Footer from '@/components/FooterComponent.vue'
 import ScrollTop from '@/components/ScrollTop.vue'
 
 export default {
   components: {
     Navbar,
+    Swiper,
     Footer,
     ScrollTop
   },
@@ -128,6 +138,14 @@ export default {
       id: '',
       favoriteData: JSON.parse(localStorage.getItem('favorite')) || [],
       isLoading: false
+    }
+  },
+  watch: {
+    $route() {
+      if (this.$route.params.productId !== undefined) {
+        this.id = this.$route.params.productId
+        this.getProduct()
+      }
     }
   },
   inject: ['emitter'],

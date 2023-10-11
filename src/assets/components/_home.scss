@@ -41,18 +41,20 @@
   background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url(https://storage.googleapis.com/vue-course-api.appspot.com/funnietravel-api/1694093178196.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=YbuKPdhdTIsabdJTXrmZFnt60N51k7IVf6GfJqCB3%2FbII7hUtAzKu2xqCU2Bi1okGizpW3CHxa3VC0inmrsSt8FHakqRt24dhEhmGARC8%2BI3%2FpUjASn546gbIiMOjArIMT%2BD2l3FkIvXnP%2FrCJ%2FWygUr%2BVwxdpBz5m1jGDSzR%2BLps7CQkr2kRiifNzTuaQuiE72U0mvgY6awTloqameaB4pKmSjWWu6ZMD%2BB5fIB9vlZ7965jAxWclD3rTctEuArSVg2tfrNaAv4QWGeiwKqhZc1cYeuvzfuxt0jYiOnYXYCfngbfcG%2Fd8AoY71Zk0dmoWFQGiy9fLQ1ySWwj4lnTQ%3D%3D);
 }
 
-.bounce {
-  animation: bounce 2s ease infinite;
+.bounce-out-down {
+  animation: bounce-out-down 2s ease infinite;
 }
 
-@keyframes bounce {
-    70% { transform:translateY(0%); }
-    80% { transform:translateY(-15%); }
-    90% { transform:translateY(0%); }
-    95% { transform:translateY(-7%); }
-    97% { transform:translateY(0%); }
-    99% { transform:translateY(-3%); }
-    100% { transform:translateY(0); }
+@keyframes bounce-out-down {
+  0% { transform: translateY(0); }
+  20% {
+    opacity: 1;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
 }
 
 .more{

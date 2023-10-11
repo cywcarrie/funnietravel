@@ -6,6 +6,7 @@
 <script>
 import emitter from '@/methods/emitter'
 import ToastMessages from '@/components/ToastMessages.vue'
+import 'bootstrap/dist/js/bootstrap.bundle'
 
 export default {
   components: {

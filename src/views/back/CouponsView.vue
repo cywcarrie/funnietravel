@@ -1,6 +1,14 @@
 <template>
   <div>
-    <Loading :active="isLoading"></Loading>
+    <LoadingVue :active="isLoading">
+      <div class="loading-animated" >
+        <div class="loading-animated-icon">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </LoadingVue>
     <div class="text-end mt-4">
       <button class="btn btn-primary" @click="openCouponModal(true)">
         建立新的優惠券

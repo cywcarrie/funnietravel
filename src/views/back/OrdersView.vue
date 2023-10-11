@@ -1,5 +1,13 @@
 <template>
-  <Loading :active="isLoading"></Loading>
+  <LoadingVue :active="isLoading">
+    <div class="loading-animated" >
+      <div class="loading-animated-icon">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+  </LoadingVue>
   <table class="table mt-4">
     <thead>
     <tr>

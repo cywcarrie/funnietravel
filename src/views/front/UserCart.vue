@@ -10,7 +10,7 @@
       </div>
   </LoadingVue>
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner1 container-fluid">
-    <h2 class="position-absolute text-center text-white fw-bold">購物車</h2>
+    <h2 class="position-absolute text-center text-white fw-bolder">購物車</h2>
   </div>
   <section class="mb-5">
     <div class="container">
@@ -18,7 +18,6 @@
         <nav aria-label="breadcrumb" class="mt-3 mb-md-4 d-flex justify-content-start">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><router-link to="/" class="text-primary hover-nav fw-bold">首頁</router-link></li>
-            <li class="breadcrumb-item"><router-link to="/user/all" class="text-primary hover-nav fw-bold">行程列表</router-link></li>
             <li class="breadcrumb-item active" aria-current="page">購物車</li>
           </ol>
         </nav>
