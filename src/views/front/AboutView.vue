@@ -21,7 +21,7 @@
           <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80" alt="關於我們" class="img-fluid">
         </div>
         <div class="col-md-6 mt-3">
-          <p class="fs-5 lh-lg px-3"><sapn class="fw-bold fs-4 text-primary">Funnie Travel</sapn> 是東南亞自由行專家，專注於新加坡、馬來西亞、泰國與峇里島等地區自由行旅遊，一直致力於為客戶提供最專業、最優質、最安全與最貼心的旅遊體驗行程。<br>每一個自由行旅遊行程皆是經過我們專業團隊精心規劃與嚴格篩選而安排的旅遊行程，為的是希望每一位客戶能夠擁有美好與安全的旅遊體驗並且享受自由行帶來的美好。</p>
+          <p class="fs-5 lh-lg px-3"><span class="fw-bold fs-4 text-primary">Funnie Travel</span> 是東南亞自由行專家，專注於新加坡、馬來西亞、泰國與峇里島等地區自由行旅遊，一直致力於為客戶提供最專業、最優質、最安全與最貼心的旅遊體驗行程。<br>每一個自由行旅遊行程皆是經過我們專業團隊精心規劃與嚴格篩選而安排的旅遊行程，為的是希望每一位客戶能夠擁有美好與安全的旅遊體驗並且享受自由行帶來的美好。</p>
         </div>
       </div>
       <!--聯繫我們-->

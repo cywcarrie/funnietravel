@@ -20,7 +20,7 @@
         <h2 class="text-center fw-bolder mb-5 text-secondary text-nowrap">關於 Funnie Travel</h2>
         <div class="text-center text-white px-3 px-md-5">
           <h3 class="fw-bolder mb-4">東南亞自由行專家</h3>
-          <p class="fs-5"><sapn class="fw-bolder fs-4">Funnie Travel</sapn> 是由一群來自台灣各地熱愛自由行，熱愛東南亞的專業團隊所組成，共同致力於提供客戶最優質、最專業與最安全的旅遊行程，讓旅人能夠放心感受旅行的美好。我們深信自由行是最能貼近當地生活及深入地探索當地文化和風土人情的旅遊方式，期望每個熱愛旅行的您，都能與我們一樣，享受自由行的美好。</p>
+          <p class="fs-5"><span class="fw-bolder fs-4">Funnie Travel</span> 是由一群來自台灣各地熱愛自由行，熱愛東南亞的專業團隊所組成，共同致力於提供客戶最優質、最專業與最安全的旅遊行程，讓旅人能夠放心感受旅行的美好。我們深信自由行是最能貼近當地生活及深入地探索當地文化和風土人情的旅遊方式，期望每個熱愛旅行的您，都能與我們一樣，享受自由行的美好。</p>
         </div>
         <div class="text-center pt-3">
           <router-link class="btn btn-outline-secondary fw-bold" to="/about">關於我們</router-link>
