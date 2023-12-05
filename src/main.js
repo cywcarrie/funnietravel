@@ -43,6 +43,11 @@ AOS.init()
 // 正常來說不建議太多方法掛 Global，這裡可以使用 provide 來處理
 app.config.globalProperties.$httpMessageState = $httpMessageState
 
+// 每次換頁都能回到最上方
+router.afterEach((to, from, next) => {
+  window.scrollTo(0, 0)
+})
+
 app.use(VueAxios, axios)
 app.use(router)
 app.use(AOS)
@@ -51,8 +56,3 @@ app.component('FormVue', Form)
 app.component('FieldVue', Field)
 app.component('ErrorMessage', ErrorMessage)
 app.mount('#app')
-
-// 每次換頁都能回到最上方
-router.afterEach((to, from, next) => {
-  window.scrollTo(0, 0)
-})
