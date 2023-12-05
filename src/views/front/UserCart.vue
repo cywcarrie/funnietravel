@@ -1,23 +1,17 @@
 <template>
-  <Navbar></Navbar>
+  <Navbar />
   <LoadingVue :active="isLoading">
-    <div class="loading-animated" >
-        <div class="loading-animated-icon">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
+    <LoadingComponent></LoadingComponent>
   </LoadingVue>
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner1 container-fluid">
     <h2 class="position-absolute text-center text-white fw-bolder">購物車</h2>
   </div>
   <section class="mb-5">
     <div class="container">
-      <a href="#" title="回上一頁" class="text-primary hover-nav fw-bold" @click.prevent="$router.go(-1)"><i class="bi bi-arrow-left-square-fill fs-2"></i></a>
+      <a href="#" title="回上一頁" class="text-secondary fw-bold" @click.prevent="$router.go(-1)"><i class="bi bi-arrow-left-square-fill fs-2"></i></a>
         <nav aria-label="breadcrumb" class="mt-3 mb-md-4 d-flex justify-content-start">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><router-link to="/" class="text-primary hover-nav fw-bold">首頁</router-link></li>
+            <li class="breadcrumb-item"><router-link to="/" class="text-dark hover-nav fw-bold">首頁</router-link></li>
             <li class="breadcrumb-item active" aria-current="page">購物車</li>
           </ol>
         </nav>
@@ -25,7 +19,7 @@
         <div class="d-flex justify-content-center mt-5">
           <h1 class="fs-2 fw-bold">購物車清單</h1>
         </div>
-        <div class="row my-5 bg-light rounded-2 py-3">
+        <div class="row mt-4 mb-5 bg-light rounded-2 py-3">
           <div class="col table-responsive mt-4 mb-4">
             <table class="table align-middle text-center table-light table-borderless">
               <thead class="table-secondary">
@@ -39,7 +33,7 @@
               </thead>
               <tbody class="text-center">
                 <tr class="table-nowrap" v-for="item in cart.carts" :key="item.id">
-                  <td class="text-nowrap fw-bold text-primary">
+                  <td class="text-nowrap fw-bold text-primary cursor-pointer hover-nav" @click="getProduct(item.product_id)">
                     {{ item.product.title }}
                     <div class="text-success" v-if="item.coupon">
                       已套用優惠券
@@ -50,9 +44,9 @@
                       <div class="input-group input-group-sm" style="width:110px">
                         <input type="number" class="form-control"
                         min="1"
-                                  :disabled="item.id === status.loadingItem"
-                                  @change="updateCart(item)"
-                              v-model.number="item.qty">
+                        :disabled="item.id === status.loadingItem"
+                        @change="updateCart(item)"
+                        v-model.number="item.qty">
                         <div class="input-group-text">/ {{ item.product.unit }}</div>
                       </div>
                     </div>
@@ -65,9 +59,9 @@
                   </td>
                   <td>
                     <button type="button" class="btn btn-outline-primary btn-sm"
-                            :disabled="status.loadingItem === item.id"
-                            @click="removeCartItem(item.id)">
-                            <i class="bi bi-trash"></i>
+                    :disabled="status.loadingItem === item.id"
+                    @click="removeCartItem(item.id)">
+                    <i class="bi bi-trash"></i>
                     </button>
                   </td>
                 </tr>
@@ -92,8 +86,13 @@
               </button>
             </div>
           </div>
-          <div class="d-flex justify-content-end align-items-center mb-4">
+          <div class="d-flex justify-content-end align-items-center mb-2">
             <div class="fs-6 fw-bold text-primary"><i class="bi bi-globe pe-2"></i>輸入優惠碼 <span class="fs-5 fw-bold text-secondary">funnietravel</span> 即享 <span class="fs-5 fw-bold text-secondary">85 </span>折優惠</div>
+          </div>
+          <div class="d-flex justify-content-end align-items-center mb-4">
+            <button @click.prevent="copyCuponCode" class="btn btn-outline-primary" type="button">
+              <span><i class="bi bi-clipboard-fill pe-2"></i><span>複製優惠碼</span></span>
+            </button>
           </div>
           <div class="d-flex justify-content-between mt-4 mb-4" v-if="cart.total !== 0">
             <router-link class="btn btn-outline-primary" to="/user">繼續選購</router-link>
@@ -111,18 +110,20 @@
       </template>
     </div>
   </section>
-  <Footer></Footer>
+  <Footer />
 </template>
 
 <script>
 import Navbar from '@/components/UserNavBar.vue'
+import LoadingComponent from '@/components/LoadingComponent.vue'
 import Footer from '@/components/FooterComponent.vue'
 export default {
   components: {
     Navbar,
+    LoadingComponent,
     Footer
   },
-  data() {
+  data () {
     return {
       isLoading: false,
       carts: [],
@@ -135,19 +136,23 @@ export default {
       }
     }
   },
+  inject: ['emitter'],
   methods: {
-    getCart() {
+    getCart () {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       this.isLoading = true
       this.$http.get(url).then((response) => {
-        console.log(response)
+        // console.log(response)
         this.cart = response.data.data
         this.isLoading = false
       }).catch(error => {
-        console.log(error)
+        this.emitter.emit('push-message', {
+          style: 'danger',
+          title: `${error.response.data.message}`
+        })
       })
     },
-    updateCart(item) {
+    updateCart (item) {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart/${item.id}`
       this.isLoading = true
       this.status.loadingItem = item.id
@@ -156,27 +161,35 @@ export default {
         qty: item.qty
       }
       this.$http.put(url, { data: cart }).then((res) => {
-        console.log(res)
+        // console.log(res)
         this.status.loadingItem = ''
         this.getCart()
+        this.emitter.emit('updatecart')
       }).catch(error => {
-        console.log(error)
+        this.emitter.emit('push-message', {
+          style: 'danger',
+          title: `${error.response.data.message}`
+        })
       })
     },
-    removeCartItem(id) {
+    removeCartItem (id) {
       this.status.loadingItem = id
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart/${id}`
       this.isLoading = true
       this.$http.delete(url).then((response) => {
         this.$httpMessageState(response, '移除購物車')
+        this.emitter.emit('updatecart')
         this.status.loadingItem = ''
         this.getCart()
         this.isLoading = false
       }).catch(error => {
-        console.log(error)
+        this.emitter.emit('push-message', {
+          style: 'danger',
+          title: `${error.response.data.message}`
+        })
       })
     },
-    addCouponCode() {
+    addCouponCode () {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/coupon`
       const coupon = {
         code: this.coupon_code
@@ -187,11 +200,30 @@ export default {
         this.getCart()
         this.isLoading = false
       }).catch(error => {
-        console.log(error)
+        this.emitter.emit('push-message', {
+          style: 'danger',
+          title: `${error.response.data.message}`
+        })
       })
+    },
+    getProduct (id) {
+      this.$router.push(`/product/${id}`)
+    },
+    copyCuponCode () {
+      const copyText = document.createElement('input')
+      const text = 'funnietravel'
+      copyText.select()
+      copyText.setSelectionRange(0, 99999)
+      navigator.clipboard.writeText(text)
+        .then(() => {
+          this.emitter.emit('push-message', {
+            style: 'primary',
+            title: '優惠碼複製成功'
+          })
+        })
     }
   },
-  created() {
+  created () {
     this.getCart()
   }
 }

@@ -27,7 +27,6 @@
             v-model="user.password"
           />
         </div>
-
         <div class="text-end mt-4">
           <button class="btn btn-primary btn-block" type="submit">登入</button>
         </div>
@@ -38,7 +37,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       user: {
         username: '',
@@ -47,7 +46,7 @@ export default {
     }
   },
   methods: {
-    signIn() {
+    signIn () {
       const api = `${process.env.VUE_APP_API}admin/signin`
       this.$http.post(api, this.user)
         .then((res) => {

@@ -1,13 +1,7 @@
 <template>
-  <Navbar></Navbar>
+  <Navbar />
   <LoadingVue :active="isLoading">
-    <div class="loading-animated" >
-        <div class="loading-animated-icon">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
+    <LoadingComponent></LoadingComponent>
   </LoadingVue>
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner2 container-fluid">
   <h2 class="position-absolute text-center text-white fw-bolder">結帳流程</h2>
@@ -64,66 +58,68 @@
             <div class="mb-3">
               <label for="email" class="form-label">Email<small class="ps-1 text-danger">(必填)</small></label>
               <FieldVue id="email" name="email" type="email" class="form-control"
-                      :class="{ 'is-invalid': errors['email'] }"
-                      placeholder="請輸入 Email" rules="email|required"
-                      v-model="form.user.email"></FieldVue>
+              :class="{ 'is-invalid': errors['email'] }"
+              placeholder="請輸入 Email" rules="email|required"
+              v-model="form.user.email"></FieldVue>
               <ErrorMessage name="email" class="invalid-feedback"></ErrorMessage>
             </div>
 
             <div class="mb-3">
               <label for="name" class="form-label">訂購人姓名<small class="ps-1 text-danger">(必填)</small></label>
               <FieldVue id="name" name="姓名" type="text" class="form-control"
-                      :class="{ 'is-invalid': errors['姓名'] }"
-                      placeholder="請輸入姓名" rules="required"
-                      v-model="form.user.name"></FieldVue>
+              :class="{ 'is-invalid': errors['姓名'] }"
+              placeholder="請輸入姓名" rules="required"
+              v-model="form.user.name"></FieldVue>
               <ErrorMessage name="姓名" class="invalid-feedback"></ErrorMessage>
             </div>
 
             <div class="mb-3">
               <label for="tel" class="form-label">訂購人電話<small class="ps-1 text-danger">(必填)</small></label>
               <FieldVue id="tel" name="電話" type="tel" class="form-control"
-                      :class="{ 'is-invalid': errors['電話'] }"
-                      placeholder="請輸入電話" rules="required"
-                      v-model="form.user.tel"></FieldVue>
+              :class="{ 'is-invalid': errors['電話'] }"
+              placeholder="請輸入電話" rules="required"
+              v-model="form.user.tel"></FieldVue>
               <ErrorMessage name="電話" class="invalid-feedback"></ErrorMessage>
             </div>
 
             <div class="mb-3">
               <label for="address" class="form-label">訂購人地址<small class="ps-1 text-danger">(必填)</small></label>
               <FieldVue id="address" name="地址" type="text" class="form-control"
-                      :class="{ 'is-invalid': errors['地址'] }"
-                      placeholder="請輸入地址" rules="required"
-                      v-model="form.user.address"></FieldVue>
+              :class="{ 'is-invalid': errors['地址'] }"
+              placeholder="請輸入地址" rules="required"
+              v-model="form.user.address"></FieldVue>
               <ErrorMessage name="地址" class="invalid-feedback"></ErrorMessage>
             </div>
 
             <div class="mb-3">
               <label for="message" class="form-label">留言</label>
               <textarea name="" id="message" class="form-control" cols="30" rows="10"
-                        v-model="form.message"></textarea>
+              v-model="form.message"></textarea>
             </div>
             <div class="d-flex justify-content-between">
-                  <router-link class="btn btn-outline-primary" to="/cart"><i class="bi bi-caret-left-fill"></i>回上一頁</router-link>
-                  <button type="submit" class="btn btn-primary">確認訂單<i class="bi bi-caret-right-fill"></i></button>
-                </div>
+              <router-link class="btn btn-outline-primary" to="/cart"><i class="bi bi-caret-left-fill"></i>回上一頁</router-link>
+              <button type="submit" class="btn btn-primary">確認訂單<i class="bi bi-caret-right-fill"></i></button>
+            </div>
           </FormVue>
         </div>
       </div>
     </div>
   </section>
-  <Footer></Footer>
+  <Footer />
 </template>
 
 <script>
 import Navbar from '@/components/UserNavBar.vue'
+import LoadingComponent from '@/components/LoadingComponent.vue'
 import Footer from '@/components/FooterComponent.vue'
 
 export default {
   components: {
     Navbar,
+    LoadingComponent,
     Footer
   },
-  data() {
+  data () {
     return {
       isLoading: false,
       total: 0,
@@ -141,31 +137,38 @@ export default {
       coupon_code: ''
     }
   },
+  inject: ['emitter'],
   methods: {
-    getCart() {
+    getCart () {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       this.isLoading = true
       this.$http.get(url).then((response) => {
-        console.log(response)
+        // console.log(response)
         this.cart = response.data.data
         this.isLoading = false
       }).catch(error => {
-        console.log(error)
+        this.emitter.emit('push-message', {
+          style: 'danger',
+          title: `${error.response.data.message}`
+        })
       })
     },
-    createOrder() {
+    createOrder () {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order`
       const order = this.form
       this.$http.post(url, { data: order })
         .then((res) => {
-          console.log(res)
+          // console.log(res)
           this.$router.push(`/checkorder/${res.data.orderId}`)
         }).catch(error => {
-        console.log(error)
-      })
+          this.emitter.emit('push-message', {
+            style: 'danger',
+            title: `${error.response.data.message}`
+          })
+        })
     }
   },
-  created() {
+  created () {
     this.getCart()
   }
 }

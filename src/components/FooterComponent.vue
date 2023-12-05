@@ -29,22 +29,29 @@
             <h5 class="text-white fw-bold">聯絡 Funnie</h5>
             <ul class="nav flex-column">
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-geo-alt-fill text-secondary"></i>台北</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-telephone-fill text-secondary"></i>123-456-789</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-telephone-fill text-secondary"></i>000-000-000</a></li>
+              <li class="nav-item mb-2"><a href="tel:+886-2-1234567" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-telephone-fill text-secondary"></i>123-4567</a></li>
+              <li class="nav-item mb-2"><a href="tel:+886-2-0000000" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-telephone-fill text-secondary"></i>000-0000</a></li>
               <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-person-fill text-secondary"></i>9:00 - 18:00</a></li>
             </ul>
           </div>
 
           <div class="col-lg-5 offset-lg-1 mb-3">
-            <form>
-              <h5 class="text-white fw-bold">訂閱 Funnie</h5>
-              <p class="text-white">訂閱我們，搶先收到最新最熱門的旅遊行程資訊！</p>
-              <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                <label for="newsletter1" class="visually-hidden">Email address</label>
-                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                <button class="btn btn-secondary text-nowrap text-white" type="button">訂閱</button>
+            <h5 class="text-white fw-bold">訂閱 Funnie</h5>
+            <p class="text-white">訂閱我們，搶先收到最新最熱門的旅遊行程資訊！</p>
+            <FormVue  v-slot="{ errors }"
+              @submit="subscribeUs"
+              ref="subscribeForm"
+              class="flex-fill">
+              <div class="input-group">
+                <FieldVue id="email" name="email" type="email" class="form-control"
+                :class="{ 'is-invalid': errors['email'] , 'is-valid': !errors['email'] && subscribe.email !== ''}"
+                placeholder="請輸入 Email" rules="email|required"
+                v-model="subscribe.email"></FieldVue>
+                <button class="btn btn-secondary text-nowrap text-white rounded-end" type="submit"
+                :disabled="errors['email'] || !subscribe.email">訂閱</button>
+                <ErrorMessage name="email" class="invalid-feedback"></ErrorMessage>
               </div>
-            </form>
+            </FormVue>
           </div>
         </div>
 
@@ -63,9 +70,23 @@
 
 <script>
 export default {
+  data () {
+    return {
+      subscribe: { email: '' }
+    }
+  },
+  inject: ['emitter'],
   methods: {
-    goToLogin() {
+    goToLogin () {
       this.$router.push('/login')
+    },
+    subscribeUs () {
+      this.emitter.emit('push-message', {
+        style: 'primary',
+        title: '感謝您的訂閱，我們將不定時寄送優惠通知'
+      })
+      this.subscribe.email = ''
+      this.$refs.subscribeForm.resetForm()
     }
   }
 }

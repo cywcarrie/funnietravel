@@ -200,11 +200,11 @@ export default {
   props: {
     product: {
       type: Object,
-      default() { return {} }
+      default () { return {} }
     }
   },
   watch: {
-    product() {
+    product () {
       this.tempProduct = this.product
       // 多圖範例
       if (!this.tempProduct.images) {
@@ -212,20 +212,20 @@ export default {
       }
     }
   },
-  data() {
+  data () {
     return {
       modal: {},
       tempProduct: {}
     }
   },
   methods: {
-    uploadFile() {
+    uploadFile () {
       const uploadedFile = this.$refs.fileInput.files[0]
       const formData = new FormData()
       formData.append('file-to-upload', uploadedFile)
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/upload`
       this.$http.post(url, formData).then((response) => {
-        console.log(response.data)
+        // console.log(response.data)
         if (response.data.success) {
           this.tempProduct.imageUrl = response.data.imageUrl
         }

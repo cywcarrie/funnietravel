@@ -7,7 +7,7 @@
     :modules="modules"
     :slides-per-view="1"
     :space-between="20"
-    :pagination="{ clickable: true }"
+    navigation
     :breakpoints="{
       '480': {
         slidesPerView: 1.5,
@@ -24,10 +24,6 @@
       '1200': {
         slidesPerView: 4,
       },
-    }"
-    :autoplay="{
-      delay: 3000,
-      disableOnInteraction: false,
     }"
   >
     <swiper-slide v-for="item in products" :key="item.id">
@@ -57,11 +53,11 @@
 </template>
 <script>
 import LoadingComponent from '@/components/LoadingComponent.vue'
-import { Pagination, A11y, Autoplay } from 'swiper/modules'
+import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 
 import 'swiper/css'
-import 'swiper/css/pagination'
+import 'swiper/css/navigation'
 
 export default {
   components: {
@@ -73,7 +69,7 @@ export default {
     return {
       isLoading: false,
       products: [],
-      modules: [Pagination, A11y, Autoplay]
+      modules: [Navigation]
     }
   },
   methods: {
@@ -82,9 +78,14 @@ export default {
       this.isLoading = true
       this.$http.get(url).then((response) => {
         this.isLoading = false
-        this.products = response.data.products
-        this.getSwiper()
-        console.log('products:', response)
+        if (response.data.success) {
+          response.data.products.forEach((item) => {
+            if (item.category === '新加坡' || item.category === '馬來西亞') {
+              this.products.push(item)
+            }
+          })
+          this.getSwiper()
+        }
       })
     },
     // 隨機取6筆資料

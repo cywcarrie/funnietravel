@@ -10,13 +10,13 @@
 import Toast from '@/components/ToastComponent.vue'
 export default {
   components: { Toast },
-  data() {
+  data () {
     return {
       messages: []
     }
   },
   inject: ['emitter'],
-  mounted() {
+  mounted () {
     this.emitter.on('push-message', (message) => {
       const { style = 'success', title, content } = message
       this.messages.push({ style, title, content })

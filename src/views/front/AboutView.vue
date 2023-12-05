@@ -1,23 +1,17 @@
 <template>
-  <Navbar></Navbar>
+  <Navbar />
   <LoadingVue :active="isLoading">
-    <div class="loading-animated" >
-      <div class="loading-animated-icon">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
+    <LoadingComponent></LoadingComponent>
   </LoadingVue>
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner1 container-fluid">
     <h2 class="position-absolute text-center text-white fw-bolder">關於我們</h2>
   </div>
   <section class="mb-5">
     <div class="container">
-      <a href="#" title="回上一頁" class="text-primary hover-nav fw-bold" @click.prevent="$router.go(-1)"><i class="bi bi-arrow-left-square-fill fs-2"></i></a>
+      <a href="#" title="回上一頁" class="text-secondary fw-bold" @click.prevent="$router.go(-1)"><i class="bi bi-arrow-left-square-fill fs-2"></i></a>
       <nav aria-label="breadcrumb" class="mt-3 mb-md-4 d-flex justify-content-start">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><router-link to="/" class="text-primary hover-nav fw-bold">首頁</router-link></li>
+          <li class="breadcrumb-item"><router-link to="/" class="text-dark hover-nav fw-bold">首頁</router-link></li>
           <li class="breadcrumb-item active" aria-current="page">關於我們</li>
         </ol>
       </nav>
@@ -37,8 +31,8 @@
           <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
             <p class="mb-4 fs-5 "><span class="fw-bold text-primary">台北總店 :</span> 台北市中正區忠孝西路000號</p>
             <p class="mb-4 fs-5"><span class="fw-bold text-primary">營業時間 :</span> 周一至周六 9:00-18:00</p>
-            <p class="mb-4 fs-5"><span class="fw-bold text-primary">訂購諮詢 :</span> 123-456-789</p>
-            <p class="mb-4 fs-5"><span class="fw-bold text-primary">免費專線 :</span> 000-000-000</p>
+            <p class="mb-4 fs-5"><span class="fw-bold text-primary">訂購諮詢 :</span><a href="tel:+886-2-1234567" class=" text-dark"> 123-4567</a></p>
+            <p class="mb-4 fs-5"><span class="fw-bold text-primary">免費專線 :</span><a href="tel:+886-2-0000000" class="text-dark"> 000-0000</a></p>
             <div class="mb-4">
               <a href="#" @click.prevent=""><i class="bi bi-facebook me-4 fs-4 text-primary hover-nav"></i></a>
               <a href="#" @click.prevent=""><i class="bi bi-twitter me-4 fs-4 text-primary hover-nav"></i></a>
@@ -54,21 +48,23 @@
     </div>
     <ScrollTop></ScrollTop>
   </section>
-  <Footer></Footer>
+  <Footer />
 </template>
 
 <script>
 import Navbar from '@/components/UserNavBar.vue'
+import LoadingComponent from '@/components/LoadingComponent.vue'
 import Footer from '@/components/FooterComponent.vue'
 import ScrollTop from '@/components/ScrollTop.vue'
 
 export default {
   components: {
     Navbar,
+    LoadingComponent,
     Footer,
     ScrollTop
   },
-  data() {
+  data () {
     return {
       isLoading: false
     }

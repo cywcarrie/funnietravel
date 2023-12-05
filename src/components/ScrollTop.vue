@@ -1,12 +1,12 @@
 <template>
   <button type="button" class="btn btn-secondary top" v-show="scY > 500" @click.prevent="goTop">
     <i class="bi bi-caret-up-fill"></i>
-    </button>
+  </button>
 </template>
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       scTimer: 0,
       scY: 0
@@ -28,7 +28,7 @@ export default {
       })
     }
   },
-  mounted() {
+  mounted () {
     window.addEventListener('scroll', this.handleScroll)
   }
 }
@@ -48,7 +48,7 @@ export default {
   }
 
 @media screen and (max-width:767px){
-  .top{
+.top{
     bottom: 15px;
     right: 15px;
     i{

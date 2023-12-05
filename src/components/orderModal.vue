@@ -8,7 +8,7 @@
             <span>訂單細節</span>
           </h5>
           <button type="button" class="btn-close"
-                  data-bs-dismiss="modal" aria-label="Close"></button>
+          data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="row">
@@ -112,10 +112,10 @@ export default {
   props: {
     order: {
       type: Object,
-      default() { return {} }
+      default () { return {} }
     }
   },
-  data() {
+  data () {
     return {
       status: {},
       modal: '',
@@ -127,7 +127,7 @@ export default {
   mixins: [modalMixin],
   inject: ['emitter'],
   watch: {
-    order() {
+    order () {
       this.tempOrder = this.order
       this.isPaid = this.tempOrder.is_paid
     }

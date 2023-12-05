@@ -1,23 +1,22 @@
 <template>
   <LoadingVue :active="isLoading">
-    <div class="loading-animated" >
-        <div class="loading-animated-icon">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
+    <LoadingComponent></LoadingComponent>
   </LoadingVue>
   <div class="container px-0">
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
       <div class="col mb-4" v-for="item in products" :key="item.id">
-        <div class=" card product-card w-100 h-100 " style="width: 18rem">
-          <img
+        <div class="card product-card w-100 h-100" style="width: 18rem">
+          <div class="product-img cursor-pointer" @click="getProduct(item.id)">
+            <img
           style=" height: 180px; background-position: center"
             :src="item.imageUrl"
             class="card-img-top cover-fit"
-            alt=""
-          />
+            alt="thailandPictures"/>
+            <span class="seemore-text d-flex justify-content-center align-items-center text-white fw-bold">
+              <i class="bi bi-search pe-1"></i>
+              See More
+            </span>
+          </div>
           <div class="card-body p-3">
             <div class="d-flex justify-content-start text-primary fw-bold">
               <p><i class="bi bi-globe me-2"></i>{{ item.category }}</p>
@@ -28,17 +27,12 @@
               <del class="h6 text-secondary" v-if="item.price">NTD {{ $filters.currency(item.origin_price) }}</del>
               <div class="h5 text-primary fw-bold" v-if="item.price">NTD {{ $filters.currency(item.price) }}</div>
             </div>
-            <div  class="text-end m-auto d-flex justify-content-between align-items-center">
-              <button type="button"
-              @click.prevent="getProduct(item.id)"
-              class="btn btn-outline-primary">
-              <i class="bi bi-search"></i>
-              </button>
-              <button type="button" class="btn btn-outline-primary"
+            <div class="card-footer border-0 bg-transparent pt-0 pb-3">
+              <button type="button" class="btn btn-outline-primary w-100"
               :disabled="this.status.loadingItem === item.id"
               @click="addCart(item.id)">
                 <div v-if="this.status.loadingItem === item.id"
-                class="spinner-grow text-primary spinner-grow-sm" role="status">
+                class="spinner-border text-primary spinner-border-sm" role="status">
                 <span class="visually-hidden">Loading...</span>
                 </div>
                 <i class="bi bi-cart-fill"></i>
@@ -53,9 +47,13 @@
 </template>
 
 <script>
+import LoadingComponent from '@/components/LoadingComponent.vue'
 
 export default {
-  data() {
+  components: {
+    LoadingComponent
+  },
+  data () {
     return {
       products: [],
       product: {},
@@ -65,8 +63,9 @@ export default {
       }
     }
   },
+  inject: ['emitter'],
   methods: {
-    getProducts() {
+    getProducts () {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/products/all`
       this.isLoading = true
       this.$http.get(url).then((response) => {
@@ -79,13 +78,16 @@ export default {
           this.isLoading = false
         }
       }).catch(error => {
-        console.log(error)
+        this.emitter.emit('push-message', {
+          style: 'danger',
+          title: `${error.response.data.message}`
+        })
       })
     },
-    getProduct(id) {
+    getProduct (id) {
       this.$router.push(`/product/${id}`)
     },
-    addCart(id) {
+    addCart (id) {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       this.status.loadingItem = id
       const cart = {
@@ -95,14 +97,18 @@ export default {
       this.$http.post(url, { data: cart })
         .then((response) => {
           this.$httpMessageState(response, '加入購物車')
+          this.emitter.emit('updatecart')
           this.status.loadingItem = ''
-          console.log(response)
+          // console.log(response)
         }).catch(error => {
-        console.log(error)
-      })
+          this.emitter.emit('push-message', {
+            style: 'danger',
+            title: `${error.response.data.message}`
+          })
+        })
     }
   },
-  created() {
+  created () {
     this.getProducts()
   }
 }

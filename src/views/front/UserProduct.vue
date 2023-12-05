@@ -1,24 +1,18 @@
 <template>
-  <Navbar></Navbar>
+  <Navbar />
   <LoadingVue :active="isLoading">
-  <div class="loading-animated" >
-      <div class="loading-animated-icon">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
+    <LoadingComponent></LoadingComponent>
   </LoadingVue>
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner1 container-fluid">
     <h2 class="position-absolute text-center text-white fw-bolder">行程資訊</h2>
   </div>
   <section class="mb-5">
     <div class="container">
-      <a href="#" title="回上一頁" class="text-primary hover-nav fw-bold" @click.prevent="$router.go(-1)"><i class="bi bi-arrow-left-square-fill fs-2"></i></a>
+      <a href="#" title="回上一頁" class="text-secondary fw-bold" @click.prevent="$router.go(-1)"><i class="bi bi-arrow-left-square-fill fs-2"></i></a>
       <nav aria-label="breadcrumb" class="mt-3 mb-md-4 d-flex justify-content-start d-none d-md-block">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><router-link to="/" class="text-primary hover-nav fw-bold">首頁</router-link></li>
-          <li class="breadcrumb-item"><router-link to="/user/all" class="text-primary hover-nav fw-bold">行程列表</router-link></li>
+          <li class="breadcrumb-item"><router-link to="/" class="text-dark hover-nav fw-bold">首頁</router-link></li>
+          <li class="breadcrumb-item"><router-link to="/user/all" class="text-dark hover-nav fw-bold">行程列表</router-link></li>
           <li class="breadcrumb-item active" aria-current="page">{{ product.title }}</li>
         </ol>
       </nav>
@@ -32,9 +26,9 @@
           </div>
           <div class="d-flex justify-content-between align-items-center">
             <h4 class="m-0 fw-bold">{{ product.title }}</h4>
-            <a href="#" title="我的最愛" @click.prevent="addFavorite(product.id)">
-              <i class="bi bi-heart text-primary fs-4" v-if="favoriteData.indexOf(product.id) === -1"></i>
-              <i class="bi bi-heart-fill text-primary fs-4" v-else></i>
+            <a href="#" title="我的最愛" @click.prevent="addFavorite(product.id)" class="ps-3 ps-md-0">
+              <i class="bi bi-heart text-primary fs-3"  v-if="favoriteData.indexOf(product.id) === -1"></i>
+              <i class="bi bi-heart-fill text-primary fs-3" v-else></i>
             </a>
           </div>
           <div class="d-flex align-items-center text-primary mt-2">
@@ -80,7 +74,7 @@
           </div>
         </div>
         <!--注意事項-->
-        <div class="row d-flex justify-content-center bg-white py-5 mt-5 rounded-2">
+        <div class="row d-flex justify-content-center bg-white py-5 mt-2 rounded-2">
           <div class="col-lg-6">
             <h4 class="fw-bold text-primary"><i class="bi bi-exclamation-circle pe-2"></i>注意事項</h4>
             <div class="mt-3">
@@ -108,17 +102,18 @@
     <div class=" mt-5 bg-white">
       <div class="container">
         <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">熱門行程</h2>
-        <Swiper></Swiper>
+        <Swiper />
       </div>
     </div>
     <!--ScrollTop-->
     <ScrollTop></ScrollTop>
   </section>
-  <Footer></Footer>
+  <Footer />
 </template>
 
 <script>
 import Navbar from '@/components/UserNavBar.vue'
+import LoadingComponent from '@/components/LoadingComponent.vue'
 import Swiper from '@/components/SwiperComponent.vue'
 import Footer from '@/components/FooterComponent.vue'
 import ScrollTop from '@/components/ScrollTop.vue'
@@ -126,11 +121,12 @@ import ScrollTop from '@/components/ScrollTop.vue'
 export default {
   components: {
     Navbar,
+    LoadingComponent,
     Swiper,
     Footer,
     ScrollTop
   },
-  data() {
+  data () {
     return {
       product: {},
       products: [],
@@ -141,7 +137,7 @@ export default {
     }
   },
   watch: {
-    $route() {
+    $route () {
       if (this.$route.params.productId !== undefined) {
         this.id = this.$route.params.productId
         this.getProduct()
@@ -150,20 +146,23 @@ export default {
   },
   inject: ['emitter'],
   methods: {
-    getProduct() {
+    getProduct () {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/product/${this.id}`
       this.isLoading = true
       this.$http.get(api).then((response) => {
-        console.log(response.data)
+        // console.log(response.data)
         this.isLoading = false
         if (response.data.success) {
           this.product = response.data.product
         }
       }).catch(error => {
-        console.log(error)
+        this.emitter.emit('push-message', {
+          style: 'danger',
+          title: `${error.response.data.message}`
+        })
       })
     },
-    addToCart(id, qty = 1) {
+    addToCart (id, qty = 1) {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       const cart = {
         product_id: id,
@@ -173,34 +172,39 @@ export default {
       this.$http.post(url, { data: cart }).then((response) => {
         this.isLoading = false
         this.$httpMessageState(response, '加入購物車')
+        this.emitter.emit('updatecart')
         // this.$router.push('/user/all')
       }).catch(error => {
-        console.log(error)
+        this.emitter.emit('push-message', {
+          style: 'danger',
+          title: `${error.response.data.message}`
+        })
       })
     },
-    addFavorite(id) {
+    addFavorite (id) {
       this.isLoading = true
       const favoiteId = this.favoriteData.indexOf(id)
       if (favoiteId === -1) {
         this.favoriteData.push(id)
         this.emitter.emit('push-message', {
-            style: 'primary',
-            title: '已加入我的最愛'
-          })
+          style: 'primary',
+          title: '已加入我的最愛'
+        })
       } else {
         this.favoriteData.splice(favoiteId, 1)
         this.emitter.emit('push-message', {
-            style: 'secondary',
-            title: '已從我的最愛移除'
-          })
+          style: 'secondary',
+          title: '已從我的最愛移除'
+        })
       }
       setTimeout(() => {
         this.isLoading = false
       }, 300)
       localStorage.setItem('favorite', JSON.stringify(this.favoriteData))
+      this.emitter.emit('updatefavorite')
     }
   },
-  created() {
+  created () {
     this.id = this.$route.params.productId
     this.getProduct()
   }

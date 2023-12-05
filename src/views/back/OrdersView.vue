@@ -1,12 +1,6 @@
 <template>
   <LoadingVue :active="isLoading">
-    <div class="loading-animated" >
-      <div class="loading-animated-icon">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
+    <LoadingComponent></LoadingComponent>
   </LoadingVue>
   <table class="table mt-4">
     <thead>
@@ -48,8 +42,10 @@
           <td>
             <div class="btn-group">
               <button class="btn btn-outline-primary btn-sm"
+              type="button"
                       @click="openModal(false, item)">檢視</button>
               <button class="btn btn-outline-danger btn-sm"
+              type="button"
                       @click="openDelOrderModal(item)"
               >刪除</button>
             </div>
@@ -65,11 +61,12 @@
 </template>
 
 <script>
+import LoadingComponent from '@/components/LoadingComponent.vue'
 import DelModal from '@/components/DelModal.vue'
 import OrderModal from '@/components/orderModal.vue'
 import Pagination from '@/components/PaginationComponent.vue'
 export default {
-  data() {
+  data () {
     return {
       orders: {},
       isNew: false,
@@ -80,12 +77,13 @@ export default {
     }
   },
   components: {
+    LoadingComponent,
     Pagination,
     DelModal,
     OrderModal
   },
   methods: {
-    getOrders(currentPage = 1) {
+    getOrders (currentPage = 1) {
       this.currentPage = currentPage
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/orders?page=${currentPage}`
       this.isLoading = true
@@ -93,21 +91,21 @@ export default {
         this.orders = response.data.orders
         this.pagination = response.data.pagination
         this.isLoading = false
-        console.log(response)
+        // console.log(response)
       })
     },
-    openModal(isNew, item) {
+    openModal (isNew, item) {
       this.tempOrder = { ...item }
       this.isNew = false
       const orderComponent = this.$refs.orderModal
       orderComponent.showModal()
     },
-    openDelOrderModal(item) {
+    openDelOrderModal (item) {
       this.tempOrder = { ...item }
       const delComponent = this.$refs.delModal
       delComponent.showModal()
     },
-    updatePaid(item) {
+    updatePaid (item) {
       this.isLoading = true
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/order/${item.id}`
       const paid = {
@@ -119,20 +117,20 @@ export default {
         this.$httpMessageState(response, '更新付款狀態')
       })
     },
-    delOrder() {
+    delOrder () {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/order/${this.tempOrder.id}`
       this.isLoading = true
       this.$http.delete(url).then((response) => {
-        console.log(response)
+        // console.log(response)
         const delComponent = this.$refs.delModal
         delComponent.hideModal()
         this.getOrders(this.currentPage)
       })
     }
   },
-  created() {
+  created () {
     this.getOrders()
-    console.log(process.env.VUE_APP_API)
+    // console.log(process.env.VUE_APP_API)
   }
 }
 </script>

@@ -10,6 +10,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import Toast from 'bootstrap/js/dist/toast'
 export default {
@@ -17,7 +18,7 @@ export default {
   props: [
     'msg'
   ],
-  mounted() {
+  mounted () {
     const toastEl = this.$refs.toast
     const toast = new Toast(toastEl, {
       delay: 6000

@@ -1,13 +1,7 @@
 <template>
-  <Navbar></Navbar>
+  <Navbar />
   <LoadingVue :active="isLoading">
-    <div class="loading-animated" >
-        <div class="loading-animated-icon">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
+    <LoadingComponent></LoadingComponent>
   </LoadingVue>
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner2 container-fluid">
     <h2 class="position-absolute text-center text-white fw-bolder">結帳流程</h2>
@@ -91,19 +85,21 @@
       </div>
     </div>
   </section>
-  <Footer></Footer>
+  <Footer />
 </template>
 
 <script>
 import Navbar from '@/components/UserNavBar.vue'
+import LoadingComponent from '@/components/LoadingComponent.vue'
 import Footer from '@/components/FooterComponent.vue'
 
 export default {
   components: {
     Navbar,
+    LoadingComponent,
     Footer
   },
-  data() {
+  data () {
     return {
       order: {
         user: {}
@@ -112,35 +108,42 @@ export default {
       isLoading: false
     }
   },
+  inject: ['emitter'],
   methods: {
-    getOrder() {
+    getOrder () {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order/${this.orderId}`
       this.$http.get(url)
         .then((res) => {
           if (res.data.success) {
             this.order = res.data.order
-            console.log(this.order)
+            // console.log(this.order)
           }
         }).catch(error => {
-          console.log(error)
+          this.emitter.emit('push-message', {
+            style: 'danger',
+            title: `${error.response.data.message}`
+          })
         })
     },
-    payOrder() {
+    payOrder () {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/pay/${this.orderId}`
       this.$http.post(url)
         .then((res) => {
-          console.log(res)
+          // console.log(res)
           if (res.data.success) {
             this.getOrder()
           }
         }).catch(error => {
-          console.log(error)
+          this.emitter.emit('push-message', {
+            style: 'danger',
+            title: `${error.response.data.message}`
+          })
         })
     }
   },
-  created() {
+  created () {
     this.orderId = this.$route.params.orderId
-    console.log(this.orderId)
+    // console.log(this.orderId)
     this.getOrder()
   }
 }

@@ -1,23 +1,17 @@
 <template>
-  <Navbar></Navbar>
+  <Navbar />
   <LoadingVue :active="isLoading">
-    <div class="loading-animated" >
-      <div class="loading-animated-icon">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
+    <LoadingComponent></LoadingComponent>
   </LoadingVue>
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner1 container-fluid">
     <h2 class="position-absolute text-center text-white fw-bolder">常見問題</h2>
   </div>
   <section class="mb-5">
     <div class="container">
-      <a href="#" title="回上一頁" class="text-primary hover-nav fw-bold" @click.prevent="$router.go(-1)"><i class="bi bi-arrow-left-square-fill fs-2"></i></a>
+      <a href="#" title="回上一頁" class="text-secondary fw-bold" @click.prevent="$router.go(-1)"><i class="bi bi-arrow-left-square-fill fs-2"></i></a>
       <nav aria-label="breadcrumb" class="mt-3 mb-md-4 d-flex justify-content-start">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><router-link to="/" class="text-primary hover-nav fw-bold">首頁</router-link></li>
+          <li class="breadcrumb-item"><router-link to="/" class="text-dark hover-nav fw-bold">首頁</router-link></li>
           <li class="breadcrumb-item active" aria-current="page">常見問題</li>
         </ol>
       </nav>
@@ -126,7 +120,10 @@
               </h2>
               <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
-                  請於購物車頁面的「優惠碼」欄位輸入優惠碼 <span class="text-secondary fw-bold">funnietravel</span>，若優惠碼輸入正確，系統將套用折扣並於畫面顯示折抵金額。
+                  請於購物車頁面的「優惠碼」欄位輸入優惠碼 <span class="text-secondary fw-bold">funnietravel</span>
+                  <button @click.prevent="copyCuponCode" class="btn btn-outline-primary btn-sm ms-2" type="button">
+                    <span><i class="bi bi-clipboard-fill pe-1"></i><span>複製優惠碼</span></span>
+                  </button>，若優惠碼輸入正確，系統將套用折扣並於畫面顯示折抵金額。
                 </div>
               </div>
             </div>
@@ -136,23 +133,42 @@
     </div>
     <ScrollTop></ScrollTop>
   </section>
-  <Footer></Footer>
+  <Footer />
 </template>
 
 <script>
 import Navbar from '@/components/UserNavBar.vue'
+import LoadingComponent from '@/components/LoadingComponent.vue'
 import Footer from '@/components/FooterComponent.vue'
 import ScrollTop from '@/components/ScrollTop.vue'
 
 export default {
   components: {
     Navbar,
+    LoadingComponent,
     Footer,
     ScrollTop
   },
-  data() {
+  data () {
     return {
       isLoading: false
+    }
+  },
+  inject: ['emitter'],
+  methods: {
+    copyCuponCode () {
+      const copyText = document.createElement('input')
+      const text = 'funnietravel'
+      copyText.select()
+      copyText.setSelectionRange(0, 99999)
+      navigator.clipboard.writeText(text)
+        .then(() => {
+          this.emitter.emit('push-message', {
+            style: 'primary',
+            title: '優惠碼複製成功'
+          })
+        })
+        // this.copyDone = true
     }
   }
 }

@@ -10,6 +10,7 @@
   "dependencies": {
     "@vee-validate/i18n": "^4.11.3",
     "@vee-validate/rules": "^4.11.3",
+    "aos": "^2.3.4",
     "axios": "^1.5.0",
     "bootstrap": "^5.3.1",
     "bootstrap-icons": "^1.10.5",

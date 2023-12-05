@@ -1,5 +1,5 @@
 <template>
-  <Navbar></Navbar>
+  <Navbar />
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner1 container-fluid">
     <h2 class="position-absolute text-center text-white fw-bolder">行程列表</h2>
   </div>
@@ -11,7 +11,7 @@
           <p>開幕慶期間結帳時輸入優惠碼 <span class=" py-1 px-2 lh-lg text-primary text-strong fw-bold">funnietravel</span>，即可享 <span class="text-strong text-primary fw-bold">85</span> 折優惠 !</p>
         </div>
         <div class="col-md-4 text-center d-none d-md-block">
-          <img src="https://storage.googleapis.com/vue-course-api.appspot.com/funnietravel-api/1694093191593.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=bbYicxdL4Vzgq0LdJCyICL6l4vycQ4mDsQvtV50Jq2BPl5adul6bkHtA5ITMUnnYzRVLTI0a2w5KiPsijlIISnRMTLKrY0PsDdskMwKvOqOvCpCjqF%2BTu9oDWMwQXr%2Fg7BDFMILQCp4bHSi6yugK73wBOwPtQZXWEQ1BX27glQiIeRXRI6alC6w2QdT5fscRMZAIU3pFdxY1bQqWleIiCcQ%2B4E4Hx5HCZUGHYbnVz1dgUZCJdgGzYMpv63CuzRp3s39WmK1xmBeHdVPL7mqOOJaijczJLPJtRvmfIwoLU5SfopIvpvom95pXsPr6hZzUYQp1ceYr7lTeXcMXNGQSdg%3D%3D" class="img-fluid rounded-2" alt="優惠碼" style="height: 200px; background-size: cover; background-position: center">
+          <img src="https://storage.googleapis.com/vue-course-api.appspot.com/funnietravel-api/1701310883317.jpg?GoogleAccessId=firebase-adminsdk-zzty7%40vue-course-api.iam.gserviceaccount.com&Expires=1742169600&Signature=SL%2BOWcoGQP7KtzlLirPZlMDa4N0SYEFPNSPqXTy5l13Wv1N%2B%2FRKklU4%2BMZxLiRrjG0v7dFs1gOyuucD6MQPh%2FGRgtT52dw3LlbpA9nqfHE%2FxKKswgUfHYlsbf4ajDJ1Kya5D9%2FGMZ2GsXhAGTKaWIFlDmXk53lGzDMNWDw7SoTdSZ4tKzAwEjQsYOjOv6iHaR71TxY47WkY08ZoRhl6VAaX1I5%2BwsG%2FEkhmMe6QlNTVh4Qw3VIMEFAVZ7RSIe1K2YMVyd1NAlhaaRA9fUFUWuYtWNIHUaksUlysWaeqxEHUmjiF9uGKmtkB8d1Y7wNqaPeHgVZEhfS0sDDRAypJJzQ%3D%3D" class="img-fluid rounded-2" alt="優惠碼" style="height: 200px; background-size: cover; background-position: center">
         </div>
       </div>
       <div class="row my-5">
@@ -46,7 +46,7 @@
     </div>
     <ScrollTop></ScrollTop>
   </section>
-  <Footer></Footer>
+  <Footer />
 </template>
 
 <script>
