@@ -117,6 +117,7 @@
 import Navbar from '@/components/UserNavBar.vue'
 import LoadingComponent from '@/components/LoadingComponent.vue'
 import Footer from '@/components/FooterComponent.vue'
+
 export default {
   components: {
     Navbar,
