@@ -168,7 +168,6 @@ export default {
             title: '優惠碼複製成功'
           })
         })
-        // this.copyDone = true
     }
   }
 }
