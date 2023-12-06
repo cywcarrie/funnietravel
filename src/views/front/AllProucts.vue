@@ -6,7 +6,7 @@
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
       <div class="col mb-4" v-for="item in products" :key="item.id">
         <div class="card product-card box-shadow w-100 h-100" style="width: 18rem">
-          <div class="product-img cursor-pointer" @click="getProduct(item.id)">
+          <div class="product-img cursor-pointer" @click.prevent="getProduct(item.id)">
             <img
             style=" height: 180px; background-position: center"
             :src="item.imageUrl"
