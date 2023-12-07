@@ -10,7 +10,7 @@
             <img
             style=" height: 180px; background-position: center"
             :src="item.imageUrl"
-            class="card-img-top cover-fit"
+            class="card-img-top object-fit-cover"
             alt="singaporePictures"/>
             <span class="seemore-text d-flex justify-content-center align-items-center text-white fw-bold">
               <i class="bi bi-search pe-1"></i>

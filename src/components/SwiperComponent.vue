@@ -36,7 +36,7 @@
           <img
           style=" height: 180px; background-position: center"
             :src="item.imageUrl"
-            class="card-img-top cover-fit"
+            class="card-img-top object-fit-cover"
             alt=""
           />
           <div class="card-body p-3">
