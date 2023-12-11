@@ -84,7 +84,6 @@ export default {
         this.isLoading = false
         this.products = response.data.products
         this.getSwiper()
-        console.log('products:', response)
       })
     },
     // 隨機取6筆資料
