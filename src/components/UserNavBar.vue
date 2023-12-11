@@ -58,7 +58,6 @@ export default {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       this.isLoading = true
       this.$http.get(url).then((response) => {
-        // console.log(response)
         this.cart = response.data.data.carts
         this.isLoading = false
       }).catch(error => {

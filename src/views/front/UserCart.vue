@@ -143,7 +143,6 @@ export default {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       this.isLoading = true
       this.$http.get(url).then((response) => {
-        // console.log(response)
         this.cart = response.data.data
         this.isLoading = false
       }).catch(error => {
@@ -162,7 +161,6 @@ export default {
         qty: item.qty
       }
       this.$http.put(url, { data: cart }).then((res) => {
-        // console.log(res)
         this.status.loadingItem = ''
         this.getCart()
         this.emitter.emit('updatecart')

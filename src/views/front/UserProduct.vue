@@ -150,7 +150,6 @@ export default {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/product/${this.id}`
       this.isLoading = true
       this.$http.get(api).then((response) => {
-        // console.log(response.data)
         this.isLoading = false
         if (response.data.success) {
           this.product = response.data.product

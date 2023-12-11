@@ -99,7 +99,6 @@ export default {
           this.$httpMessageState(response, '加入購物車')
           this.emitter.emit('updatecart')
           this.status.loadingItem = ''
-          // console.log(response)
         }).catch(error => {
           this.emitter.emit('push-message', {
             style: 'danger',

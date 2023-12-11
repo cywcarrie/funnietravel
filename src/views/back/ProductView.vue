@@ -82,7 +82,6 @@ export default {
       this.$http.get(api).then((res) => {
         this.isLoading = false
         if (res.data.success) {
-          // console.log(res.data)
           this.products = res.data.products
           this.pagination = res.data.pagination
         }
@@ -110,7 +109,6 @@ export default {
       }
       const productComponent = this.$refs.productModal
       this.$http[httpMethod](api, { data: this.tempProduct }).then((response) => {
-        // console.log(response)
         productComponent.hideModal()
         if (response.data.success) {
           this.getProducts()
@@ -136,7 +134,6 @@ export default {
     delProduct () {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/product/${this.tempProduct.id}`
       this.$http.delete(url).then((response) => {
-        // console.log(response.data)
         const delComponent = this.$refs.delModal
         delComponent.hideModal()
         this.getProducts()

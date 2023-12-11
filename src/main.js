@@ -4,10 +4,6 @@ import VueAxios from 'vue-axios'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/css/index.css'
 
-// AOS
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import {
   Form, Field, ErrorMessage, defineRule, configure
@@ -36,23 +32,19 @@ configure({
 // 設定預設語系
 setLocale('zh_TW')
 
-// AOS
-AOS.init()
-
 // $httpMessageState 此函式的用途是整合 Ajax 的錯誤事件，統一整理發送給予 Toast
 // 正常來說不建議太多方法掛 Global，這裡可以使用 provide 來處理
 app.config.globalProperties.$httpMessageState = $httpMessageState
 
-// 每次換頁都能回到最上方
-router.afterEach((to, from, next) => {
-  window.scrollTo(0, 0)
-})
-
 app.use(VueAxios, axios)
 app.use(router)
-app.use(AOS)
 app.component('LoadingVue', Loading)
 app.component('FormVue', Form)
 app.component('FieldVue', Field)
 app.component('ErrorMessage', ErrorMessage)
 app.mount('#app')
+
+// 每次換頁都能回到最上方
+router.afterEach((to, from, next) => {
+  window.scrollTo(0, 0)
+})

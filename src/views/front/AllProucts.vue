@@ -76,7 +76,6 @@ export default {
       this.$http.get(url).then((response) => {
         this.products = response.data.products
         this.pagination = response.data.pagination
-        // console.log('products:', response)
         this.isLoading = false
       }).catch(error => {
         this.emitter.emit('push-message', {
@@ -100,7 +99,6 @@ export default {
           this.$httpMessageState(response, '加入購物車')
           this.emitter.emit('updatecart')
           this.status.loadingItem = ''
-          // console.log(response)
         }).catch(error => {
           this.emitter.emit('push-message', {
             style: 'danger',

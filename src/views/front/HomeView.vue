@@ -130,9 +130,6 @@ export default {
     SwiperBali,
     Footer,
     ScrollTop
-  },
-  created () {
-    // console.log(process.env.VUE_APP_API, process.env.VUE_APP_PATH)
   }
 }
 </script>

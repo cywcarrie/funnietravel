@@ -143,7 +143,6 @@ export default {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/cart`
       this.isLoading = true
       this.$http.get(url).then((response) => {
-        // console.log(response)
         this.cart = response.data.data
         this.isLoading = false
       }).catch(error => {
@@ -158,7 +157,6 @@ export default {
       const order = this.form
       this.$http.post(url, { data: order })
         .then((res) => {
-          // console.log(res)
           this.$router.push(`/checkorder/${res.data.orderId}`)
         }).catch(error => {
           this.emitter.emit('push-message', {
