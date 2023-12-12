@@ -31,8 +31,8 @@
           <td>
             <div class="form-check form-switch">
               <input class="form-check-input" type="checkbox" :id="`paidSwitch${item.id}`"
-                     v-model="item.is_paid"
-                     @change="updatePaid(item)">
+              v-model="item.is_paid"
+              @change="updatePaid(item)">
               <label class="form-check-label" :for="`paidSwitch${item.id}`">
                 <span v-if="item.is_paid">已付款</span>
                 <span v-else>未付款</span>
@@ -43,10 +43,10 @@
             <div class="btn-group">
               <button class="btn btn-outline-primary btn-sm"
               type="button"
-                      @click="openModal(false, item)">檢視</button>
+              @click="openModal(false, item)">檢視</button>
               <button class="btn btn-outline-danger btn-sm"
               type="button"
-                      @click="openDelOrderModal(item)"
+              @click="openDelOrderModal(item)"
               >刪除</button>
             </div>
           </td>

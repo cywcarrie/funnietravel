@@ -31,11 +31,11 @@
           <div class="btn-group">
             <button class="btn btn-outline-primary btn-sm"
             type="button"
-                    @click="openCouponModal(false, item)"
+            @click="openCouponModal(false, item)"
             >編輯</button>
             <button class="btn btn-outline-danger btn-sm"
             type="button"
-                    @click="openDelCouponModal(item)"
+            @click="openDelCouponModal(item)"
             >刪除</button>
           </div>
         </td>

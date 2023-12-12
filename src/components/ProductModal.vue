@@ -72,6 +72,7 @@
                 >
                   <button
                     class="btn btn-outline-primary btn-sm d-block w-100"
+                    type="button"
                     @click="tempProduct.images.push('')"
                   >
                     新增圖片
