@@ -5,40 +5,42 @@
   <div class="container px-0">
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
       <div class="col mb-4" v-for="item in products" :key="item.id">
-        <div class="card product-card box-shadow w-100 h-100" style="width: 18rem">
-          <div class="product-img cursor-pointer" @click="getProduct(item.id)">
-            <img
-            style=" height: 180px; background-position: center"
-            :src="item.imageUrl"
-            class="card-img-top object-fit-cover"
-            alt="allProuctsPictures"/>
-            <span class="seemore-text d-flex justify-content-center align-items-center text-white fw-bold">
-              <i class="bi bi-search pe-1"></i>
-              See More
-            </span>
-          </div>
-          <div class="card-body p-3">
-            <div class="d-flex justify-content-start text-primary fw-bold">
-              <p><i class="bi bi-globe me-2"></i>{{ item.category }}</p>
+        <div class="card product-card w-100 h-100" style="width: 18rem">
+          <router-link class="" :to="`/product/${item.id}`">
+            <div class="product-img cursor-pointer" @click="getProduct(item.id)">
+              <img
+              style=" height: 180px; background-position: center"
+              :src="item.imageUrl"
+              class="card-img-top object-fit-cover"
+              alt="allProuctsPictures"/>
+              <span class="seemore-text d-flex justify-content-center align-items-center text-white">
+                <i class="bi bi-search pe-1"></i>
+                查看更多
+              </span>
             </div>
-            <h5 class="card-title fw-bolder mb-3">{{ item.title }}</h5>
-            <div class="d-flex justify-content-between align-items-center mb-3">
-              <div class="h5 text-secondary" v-if="!item.price">NTD {{ $filters.currency(item.origin_price) }} </div>
-              <del class="h6 text-secondary" v-if="item.price">NTD {{ $filters.currency(item.origin_price) }} </del>
-              <div class="h5 text-primary fw-bold" v-if="item.price"> NTD {{ $filters.currency(item.price) }} </div>
+            <div class="card-body p-3">
+              <div class="d-flex justify-content-start text-primary fw-bold">
+                <p><i class="bi bi-globe me-2"></i>{{ item.category }}</p>
+              </div>
+              <h5 class="card-title fw-bolder mb-3 text-primary">{{ item.title }}</h5>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <div class="h5 text-secondary" v-if="!item.price">NTD {{ $filters.currency(item.origin_price) }} </div>
+                <del class="h6 text-secondary" v-if="item.price">NTD {{ $filters.currency(item.origin_price) }} </del>
+                <div class="h5 text-primary fw-bold" v-if="item.price"> NTD {{ $filters.currency(item.price) }} </div>
+              </div>
             </div>
-            <div class="card-footer border-0 bg-transparent pt-0 pb-3">
-              <button type="button" class="btn btn-outline-primary w-100"
-              :disabled="this.status.loadingItem === item.id"
-              @click="addCart(item.id)">
-                <div v-if="this.status.loadingItem === item.id"
-                class="spinner-border text-primary spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-                </div>
-                <i class="bi bi-cart-fill"></i>
-                加入購物車
-              </button>
-            </div>
+          </router-link>
+          <div class="card-footer border-0 bg-transparent pt-0 pb-3">
+            <button type="button" class="btn btn-outline-primary w-100"
+            :disabled="this.status.loadingItem === item.id"
+            @click="addCart(item.id)">
+              <div v-if="this.status.loadingItem === item.id"
+              class="spinner-border text-primary spinner-border-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+              </div>
+              <i class="bi bi-cart-fill"></i>
+              加入購物車
+            </button>
           </div>
         </div>
       </div>
