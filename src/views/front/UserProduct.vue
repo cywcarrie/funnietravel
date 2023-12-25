@@ -182,15 +182,15 @@ export default {
     },
     addFavorite (id) {
       this.isLoading = true
-      const favoiteId = this.favoriteData.indexOf(id)
-      if (favoiteId === -1) {
+      const favoriteId = this.favoriteData.indexOf(id)
+      if (favoriteId === -1) {
         this.favoriteData.push(id)
         this.emitter.emit('push-message', {
           style: 'primary',
           title: '已加入我的最愛'
         })
       } else {
-        this.favoriteData.splice(favoiteId, 1)
+        this.favoriteData.splice(favoriteId, 1)
         this.emitter.emit('push-message', {
           style: 'secondary',
           title: '已從我的最愛移除'
