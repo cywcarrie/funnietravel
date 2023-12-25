@@ -90,7 +90,7 @@
             <div class="fs-6 fw-bold text-primary"><i class="bi bi-globe pe-2"></i>輸入優惠碼 <span class="fs-5 fw-bold text-secondary">funnietravel</span> 即享 <span class="fs-5 fw-bold text-secondary">85 </span>折優惠</div>
           </div>
           <div class="d-flex justify-content-end align-items-center mb-4">
-            <button @click.prevent="copyCuponCode" class="btn btn-outline-primary" type="button">
+            <button @click="copyCuponCode" class="btn btn-outline-primary" type="button">
               <span><i class="bi bi-clipboard-fill pe-2"></i><span>複製優惠碼</span></span>
             </button>
           </div>

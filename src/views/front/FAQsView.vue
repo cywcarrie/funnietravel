@@ -121,7 +121,7 @@
               <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight" data-bs-parent="#accordionExample">
                 <div class="accordion-body">
                   請於購物車頁面的「優惠碼」欄位輸入優惠碼 <span class="text-secondary fw-bold">funnietravel</span>
-                  <button @click.prevent="copyCuponCode" class="btn btn-outline-primary btn-sm ms-2" type="button">
+                  <button @click="copyCuponCode" class="btn btn-outline-primary btn-sm ms-2" type="button">
                     <span><i class="bi bi-clipboard-fill pe-1"></i><span>複製優惠碼</span></span>
                   </button>，若優惠碼輸入正確，系統將套用折扣並於畫面顯示折抵金額。
                 </div>
