@@ -43,7 +43,7 @@
             <div class="btn-group">
               <button class="btn btn-outline-primary btn-sm"
               type="button"
-              @click="openModal(false, item)">檢視</button>
+              @click="openModal(item)">檢視</button>
               <button class="btn btn-outline-danger btn-sm"
               type="button"
               @click="openDelOrderModal(item)"
@@ -93,9 +93,8 @@ export default {
         this.isLoading = false
       })
     },
-    openModal (isNew, item) {
+    openModal (item) {
       this.tempOrder = { ...item }
-      this.isNew = false
       const orderComponent = this.$refs.orderModal
       orderComponent.showModal()
     },
