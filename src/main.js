@@ -3,7 +3,6 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import Loading from 'vue-loading-overlay'
 import 'vue-loading-overlay/dist/css/index.css'
-
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import {
   Form, Field, ErrorMessage, defineRule, configure
@@ -44,7 +43,6 @@ app.component('FieldVue', Field)
 app.component('ErrorMessage', ErrorMessage)
 app.mount('#app')
 
-// 每次換頁都能回到最上方
 router.afterEach((to, from, next) => {
   window.scrollTo(0, 0)
 })

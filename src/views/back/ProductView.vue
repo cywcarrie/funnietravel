@@ -1,7 +1,5 @@
 <template>
-  <LoadingVue :active="isLoading">
-    <LoadingComponent></LoadingComponent>
-  </LoadingVue>
+  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
   <div class="text-end mt-3">
     <button class="btn btn-primary" type="button"
     @click="openModal(true)">
@@ -53,7 +51,6 @@
 </template>
 
 <script>
-import LoadingComponent from '@/components/LoadingComponent.vue'
 import ProductModal from '@/components/ProductModal.vue'
 import PaginationComponent from '@/components/PaginationComponent.vue'
 import DelModal from '@/components/DelModal.vue'
@@ -69,7 +66,6 @@ export default {
     }
   },
   components: {
-    LoadingComponent,
     ProductModal,
     DelModal,
     PaginationComponent
@@ -136,6 +132,7 @@ export default {
       this.$http.delete(url).then((response) => {
         const delComponent = this.$refs.delModal
         delComponent.hideModal()
+        this.$httpMessageState(response, '刪除')
         this.getProducts()
       })
     }

@@ -1,10 +1,7 @@
 <template>
   <Navbar />
-  <LoadingVue :active="isLoading">
-    <LoadingComponent></LoadingComponent>
-  </LoadingVue>
+  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
   <section>
-    <!--首頁封面-->
     <div class="home d-flex justify-content-center align-items-center position-relative">
       <div class="text-center text-light home-content border" data-aos="fade-down" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="50">
         <h2 class="mb-3 fw-bolder fs-1 text-nowrap">探索美麗的東南亞</h2>
@@ -14,7 +11,6 @@
         <router-link class="btn btn-primary fw-bold px-5 py-2 rounded-0 border border-white" to="/user/all">瀏覽行程</router-link>
       </div>
     </div>
-    <!--關於Funnie-->
     <div class="py-5 about" id="about">
       <div class="container py-3">
         <h2 class="text-center fw-bolder mb-5 text-secondary text-nowrap">關於 Funnie Travel</h2>
@@ -27,7 +23,6 @@
         </div>
       </div>
     </div>
-    <!--地區選單-->
     <div class="py-5 bg-light">
       <div class="container py-3">
         <div class="row justify-content-center">
@@ -62,14 +57,12 @@
         </div>
       </div>
     </div>
-    <!--Swiper卡片-->
     <div class=" mt-5 bg-white">
       <div class="container py-3">
         <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">熱門行程推薦</h2>
         <Swiper />
       </div>
     </div>
-    <!--Swiper新馬地區-->
     <div class=" mt-5 bg-white">
       <div class="container py-3">
         <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">Funnie 帶您 HEN 瘋玩新馬</h2>
@@ -81,7 +74,6 @@
         </div>
       </div>
     </div>
-    <!--Swiper泰峇地區-->
     <div class=" mt-5 bg-white">
       <div class="container py-3">
         <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">Funnie 帶您 FUN 鬆遊泰峇</h2>
@@ -93,7 +85,6 @@
         </div>
       </div>
     </div>
-    <!--Funnie-->
     <div class="py-5 mt-5 home-bottom-content">
       <div class="container py-3">
         <h2 class="text-center fw-bolder py-3 text-secondary">旅行是唯一讓我們花錢，心靈卻變得更富有的事物</h2>
@@ -102,14 +93,13 @@
         </div>
       </div>
     </div>
-    <ScrollTop></ScrollTop>
+    <ScrollTop />
   </section>
   <Footer />
 </template>
 
 <script>
 import Navbar from '@/components/UserNavBar.vue'
-import LoadingComponent from '@/components/LoadingComponent.vue'
 import Swiper from '@/components/SwiperComponent.vue'
 import SwiperSinga from '@/components/SwiperSingaMalay.vue'
 import SwiperBali from '@/components/SwiperThaiBa.vue'
@@ -124,7 +114,6 @@ export default {
   },
   components: {
     Navbar,
-    LoadingComponent,
     Swiper,
     SwiperSinga,
     SwiperBali,

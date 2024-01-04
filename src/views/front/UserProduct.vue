@@ -1,8 +1,6 @@
 <template>
   <Navbar />
-  <LoadingVue :active="isLoading">
-    <LoadingComponent></LoadingComponent>
-  </LoadingVue>
+  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner1 container-fluid">
     <h2 class="position-absolute text-center text-white fw-bolder">行程資訊</h2>
   </div>
@@ -56,7 +54,6 @@
             </div>
           </div>
         </div>
-        <!--行程內容-->
         <div class="row d-flex justify-content-center bg-light py-5 my-5 rounded-2">
           <div class="col-lg-6">
             <h4 class="fw-bold text-primary"><i class="bi bi-globe pe-2"></i>行程特色</h4>
@@ -73,13 +70,12 @@
             </div>
           </div>
         </div>
-        <!--注意事項-->
         <div class="row d-flex justify-content-center bg-white py-5 mt-2 rounded-2">
           <div class="col-lg-6">
             <h4 class="fw-bold text-primary"><i class="bi bi-exclamation-circle pe-2"></i>注意事項</h4>
             <div class="mt-3">
-              <P class="mb-2">1. 本行程一經售出，不得轉讓他人使用。</P>
-              <P class="mb-2">2. 本行程報價已包含機場稅與燃油附加費。</P>
+              <p class="mb-2">1. 本行程一經售出，不得轉讓他人使用。</p>
+              <p class="mb-2">2. 本行程報價已包含機場稅與燃油附加費。</p>
               <p class="mb-2">3. 本行程報價未包含旅遊平安保險及旅遊不便險。</p>
               <p class="mb-2">4. 本行程報價未包含每日旅館客房清理及行李小費。</p>
               <p>5. 本行程未包含護照新辦及簽證費用，如有需要代辦，請洽詢專員。</p>
@@ -88,8 +84,8 @@
           <div class="col-lg-6 mt-4 mt-lg-0">
             <h4 class="fw-bold text-primary"><i class="bi bi-exclamation-circle pe-2"></i>改退行程須知</h4>
             <div class="mt-3">
-              <P class="mb-2">1. 若欲辦理取消或是更改行程，請務必先洽詢專員。</P>
-              <P class="mb-2">2. 未提前取消行程或因個人因素被拒絕入境，將無法申請退費。</P>
+              <p class="mb-2">1. 若欲辦理取消或是更改行程，請務必先洽詢專員。</p>
+              <p class="mb-2">2. 未提前取消行程或因個人因素被拒絕入境，將無法申請退費。</p>
               <p class="mb-2">3. 更改行程須依航空公司之規定扣除相關費用外，公司另收取手續費每人 500 元。</p>
               <p class="mb-2">4. 取消行程須依航空公司之規定扣除相關費用外，公司另收取手續費每人 1000 元。</p>
               <p>5. 若遇不可抗力因素如天候異常等導致行程被迫更改或取消，公司不另收取手續費。</p>
@@ -98,22 +94,19 @@
         </div>
       </div>
     </div>
-    <!--Swiper卡片-->
     <div class=" mt-5 bg-white">
       <div class="container">
         <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">熱門行程</h2>
         <Swiper />
       </div>
     </div>
-    <!--ScrollTop-->
-    <ScrollTop></ScrollTop>
+    <ScrollTop />
   </section>
   <Footer />
 </template>
 
 <script>
 import Navbar from '@/components/UserNavBar.vue'
-import LoadingComponent from '@/components/LoadingComponent.vue'
 import Swiper from '@/components/SwiperComponent.vue'
 import Footer from '@/components/FooterComponent.vue'
 import ScrollTop from '@/components/ScrollTop.vue'
@@ -121,7 +114,6 @@ import ScrollTop from '@/components/ScrollTop.vue'
 export default {
   components: {
     Navbar,
-    LoadingComponent,
     Swiper,
     Footer,
     ScrollTop
@@ -172,7 +164,6 @@ export default {
         this.isLoading = false
         this.$httpMessageState(response, '加入購物車')
         this.emitter.emit('updatecart')
-        // this.$router.push('/user/all')
       }).catch(error => {
         this.emitter.emit('push-message', {
           style: 'danger',

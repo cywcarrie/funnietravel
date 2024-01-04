@@ -48,7 +48,6 @@
                 />
               </div>
               <img class="img-fluid" :src="tempProduct.imageUrl" alt="" />
-              <!-- 延伸技巧，多圖 -->
               <div class="mt-5" v-if="tempProduct.images">
                 <div v-for="(image, key) in tempProduct.images" class="mb-3 input-group" :key="key">
                   <input
@@ -207,7 +206,6 @@ export default {
   watch: {
     product () {
       this.tempProduct = this.product
-      // 多圖範例
       if (!this.tempProduct.images) {
         this.tempProduct.images = []
       }

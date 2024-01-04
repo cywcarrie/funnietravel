@@ -1,5 +1,5 @@
 <template>
-  <ToastMessages></ToastMessages>
+  <ToastMessages />
   <router-view/>
 </template>
 

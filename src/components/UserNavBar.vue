@@ -1,7 +1,5 @@
 <template>
-  <LoadingVue :active="isLoading">
-    <LoadingComponent></LoadingComponent>
-  </LoadingVue>
+  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
     <div class="container">
       <router-link to="/" class="navbar-brand me-auto d-flex align-items-center"
@@ -41,10 +39,8 @@
 </template>
 
 <script>
-import LoadingComponent from '@/components/LoadingComponent.vue'
 
 export default {
-  components: { LoadingComponent },
   data () {
     return {
       isLoading: false,

@@ -1,7 +1,5 @@
 <template>
-  <LoadingVue :active="isLoading">
-    <LoadingComponent></LoadingComponent>
-  </LoadingVue>
+  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
    <swiper
     class="pb-5"
     :modules="modules"
@@ -56,7 +54,6 @@
   </swiper>
 </template>
 <script>
-import LoadingComponent from '@/components/LoadingComponent.vue'
 import { Pagination, A11y, Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
 
@@ -66,8 +63,7 @@ import 'swiper/css/pagination'
 export default {
   components: {
     Swiper,
-    SwiperSlide,
-    LoadingComponent
+    SwiperSlide
   },
   data () {
     return {
@@ -86,7 +82,6 @@ export default {
         this.getSwiper()
       })
     },
-    // 隨機取6筆資料
     getSwiper () {
       const randomSwiper = []
       for (let i = 0; i < 6; i += 1) {

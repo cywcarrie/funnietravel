@@ -1,8 +1,6 @@
 <template>
   <Navbar />
-  <LoadingVue :active="isLoading">
-    <LoadingComponent></LoadingComponent>
-  </LoadingVue>
+  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner2 container-fluid">
   <h2 class="position-absolute text-center text-white fw-bolder">結帳流程</h2>
   </div>
@@ -50,7 +48,6 @@
             </table>
           </div>
         </div>
-        <!--訂購人資訊-->
         <div class="row col-lg-5">
           <h2 class="text-center fw-bold mb-4">訂購人資訊</h2>
           <FormVue v-slot="{ errors }"
@@ -110,13 +107,11 @@
 
 <script>
 import Navbar from '@/components/UserNavBar.vue'
-import LoadingComponent from '@/components/LoadingComponent.vue'
 import Footer from '@/components/FooterComponent.vue'
 
 export default {
   components: {
     Navbar,
-    LoadingComponent,
     Footer
   },
   data () {

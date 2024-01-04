@@ -40,11 +40,11 @@
           </div>
         </div>
         <div class="col-lg-9">
-          <router-view></router-view>
+          <router-view/>
         </div>
       </div>
     </div>
-    <ScrollTop></ScrollTop>
+    <ScrollTop />
   </section>
   <Footer />
 </template>

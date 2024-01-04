@@ -1,8 +1,6 @@
 <template>
   <Navbar />
-  <LoadingVue :active="isLoading">
-    <LoadingComponent></LoadingComponent>
-  </LoadingVue>
+  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner1 container-fluid">
     <h2 class="position-absolute text-center text-white fw-bolder">購物車</h2>
   </div>
@@ -52,7 +50,6 @@
                     </div>
                   </td>
                   <td class="text-end text-nowrap">{{ $filters.currency(item.product.price) }}</td>
-                  <!-- <td class="text-end text-nowrap">{{ $filters.currency(item.total) }}</td> -->
                   <td class="text-end text-nowrap">
                     <small v-if="cart.final_total !== cart.total" class="text-success">優惠價：</small>
                     {{ $filters.currency(item.final_total) }}
@@ -90,7 +87,7 @@
             <div class="fs-6 fw-bold text-primary"><i class="bi bi-globe pe-2"></i>輸入優惠碼 <span class="fs-5 fw-bold text-secondary">funnietravel</span> 即享 <span class="fs-5 fw-bold text-secondary">85 </span>折優惠</div>
           </div>
           <div class="d-flex justify-content-end align-items-center mb-4">
-            <button @click="copyCuponCode" class="btn btn-outline-primary" type="button">
+            <button @click="copyCouponCode" class="btn btn-outline-primary" type="button">
               <span><i class="bi bi-clipboard-fill pe-2"></i><span>複製優惠碼</span></span>
             </button>
           </div>
@@ -115,13 +112,11 @@
 
 <script>
 import Navbar from '@/components/UserNavBar.vue'
-import LoadingComponent from '@/components/LoadingComponent.vue'
 import Footer from '@/components/FooterComponent.vue'
 
 export default {
   components: {
     Navbar,
-    LoadingComponent,
     Footer
   },
   data () {
@@ -208,7 +203,7 @@ export default {
     getProduct (id) {
       this.$router.push(`/product/${id}`)
     },
-    copyCuponCode () {
+    copyCouponCode () {
       const copyText = document.createElement('input')
       const text = 'funnietravel'
       copyText.select()

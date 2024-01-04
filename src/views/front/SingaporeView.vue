@@ -1,7 +1,5 @@
 <template>
-  <LoadingVue :active="isLoading">
-    <LoadingComponent></LoadingComponent>
-  </LoadingVue>
+  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
   <div class="container px-0">
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
       <div class="col mb-4" v-for="item in products" :key="item.id">
@@ -49,12 +47,8 @@
 </template>
 
 <script>
-import LoadingComponent from '@/components/LoadingComponent.vue'
 
 export default {
-  components: {
-    LoadingComponent
-  },
   data () {
     return {
       products: [],

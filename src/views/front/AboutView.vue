@@ -1,8 +1,6 @@
 <template>
   <Navbar />
-  <LoadingVue :active="isLoading">
-    <LoadingComponent></LoadingComponent>
-  </LoadingVue>
+  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner1 container-fluid">
     <h2 class="position-absolute text-center text-white fw-bolder">關於我們</h2>
   </div>
@@ -18,18 +16,17 @@
       <h2 class="text-center fw-bold text-primary mt-5">關於 <span class="fw-bolder text-secondary"> Funnie Travel</span></h2>
       <div class="row d-flex align-items-center mt-4 py-5">
         <div class="col-md-6 p-4">
-          <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2670&q=80" alt="關於我們" class="img-fluid">
+          <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=640&q=80" alt="關於我們" class="img-fluid">
         </div>
         <div class="col-md-6 mt-3">
           <p class="fs-5 lh-lg px-3"><span class="fw-bold fs-4 text-primary">Funnie Travel</span> 是東南亞自由行專家，專注於新加坡、馬來西亞、泰國與峇里島等地區自由行旅遊，一直致力於為客戶提供最專業、最優質、最安全與最貼心的旅遊體驗行程。<br>每一個自由行旅遊行程皆是經過我們專業團隊精心規劃與嚴格篩選而安排的旅遊行程，為的是希望每一位客戶能夠擁有美好與安全的旅遊體驗並且享受自由行帶來的美好。</p>
         </div>
       </div>
-      <!--聯繫我們-->
-      <div class="mt-5">
+      <div class="mt-5" data-aos="fade-up" data-aos-duration="1300" data-aos-delay="200">
         <h2 class="text-center fw-bold text-primary">聯絡我們</h2>
         <div class="row mt-4 py-5">
           <div class="col-md-6 d-flex flex-column justify-content-center align-items-center">
-            <p class="mb-4 fs-5 "><span class="fw-bold text-primary">台北總店 :</span> 台北市中正區忠孝西路000號</p>
+            <p class="mb-4 fs-5"><span class="fw-bold text-primary">台北總店 :</span> 台北市中正區忠孝西路000號</p>
             <p class="mb-4 fs-5"><span class="fw-bold text-primary">營業時間 :</span> 周一至周六 9:00-18:00</p>
             <p class="mb-4 fs-5"><span class="fw-bold text-primary">訂購諮詢 :</span><a href="tel:+886-2-1234567" class=" text-dark"> 123-4567</a></p>
             <p class="mb-4 fs-5"><span class="fw-bold text-primary">免費專線 :</span><a href="tel:+886-2-0000000" class="text-dark"> 000-0000</a></p>
@@ -46,21 +43,19 @@
         </div>
       </div>
     </div>
-    <ScrollTop></ScrollTop>
+    <ScrollTop />
   </section>
   <Footer />
 </template>
 
 <script>
 import Navbar from '@/components/UserNavBar.vue'
-import LoadingComponent from '@/components/LoadingComponent.vue'
 import Footer from '@/components/FooterComponent.vue'
 import ScrollTop from '@/components/ScrollTop.vue'
 
 export default {
   components: {
     Navbar,
-    LoadingComponent,
     Footer,
     ScrollTop
   },

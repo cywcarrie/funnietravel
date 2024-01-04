@@ -1,8 +1,6 @@
 <template>
   <div>
-    <LoadingVue :active="isLoading">
-      <LoadingComponent></LoadingComponent>
-    </LoadingVue>
+    <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
     <div class="text-end mt-4">
       <button class="btn btn-primary" type="button" @click="openCouponModal(true)">
         建立新的優惠券
@@ -49,12 +47,11 @@
 </template>
 
 <script>
-import LoadingComponent from '@/components/LoadingComponent.vue'
 import CouponModal from '@/components/CouponModal.vue'
 import DelModal from '@/components/DelModal.vue'
 
 export default {
-  components: { CouponModal, DelModal, LoadingComponent },
+  components: { CouponModal, DelModal },
   props: {
     config: Object
   },
