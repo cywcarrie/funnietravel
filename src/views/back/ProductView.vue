@@ -43,10 +43,10 @@
     </tbody>
   </table>
   <PaginationComponent :pages="pagination"
-    @emit-pages="getProducts"></PaginationComponent>
+    @emit-pages="getProducts" />
   <ProductModal ref="productModal"
   :product="tempProduct"
-  @update-product="updateProduct"></ProductModal>
+  @update-product="updateProduct" />
   <DelModal :item="tempProduct" ref="delModal" @del-item="delProduct"/>
 </template>
 

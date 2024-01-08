@@ -44,7 +44,7 @@
       </div>
     </div>
     <PaginationComponent :pages="pagination"
-          @emit-pages="getProducts"></PaginationComponent>
+          @emit-pages="getProducts" />
   </div>
 </template>
 
