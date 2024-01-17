@@ -48,23 +48,23 @@ const routes = [
       },
       {
         path: 'all',
-        component: () => import('../views/front/AllProucts.vue')
+        component: () => import('../views/front/productspage/AllProucts.vue')
       },
       {
         path: 'singapore',
-        component: () => import('../views/front/SingaporeView.vue')
+        component: () => import('../views/front/productspage/SingaporeView.vue')
       },
       {
         path: 'malaysia',
-        component: () => import('../views/front/MalaysiaView.vue')
+        component: () => import('../views/front/productspage/MalaysiaView.vue')
       },
       {
         path: 'bali',
-        component: () => import('../views/front/BaliView.vue')
+        component: () => import('../views/front/productspage/BaliView.vue')
       },
       {
         path: 'thailand',
-        component: () => import('../views/front/ThailandView.vue')
+        component: () => import('../views/front/productspage/ThailandView.vue')
       }
     ]
   },
