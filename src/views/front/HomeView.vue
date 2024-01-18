@@ -8,8 +8,20 @@
         <h5 class="text-nowrap"><span class="fw-bold fs-4">Funnie</span> 給您輕鬆快樂自由行</h5>
       </div>
       <div class="d-flex flex-column align-items-center text-white mt-5 pt-5 more position-absolute" data-aos="fade-down" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="50">
-        <router-link class="btn btn-primary fw-bold px-5 py-2 rounded-0 border border-white" to="/user/all">瀏覽行程</router-link>
+        <router-link class="btn fw-bold px-5 py-2 rounded-0 border border-white home-first-btn" to="/user/all">瀏覽行程</router-link>
       </div>
+    </div>
+    <div class="bg-light py-3">
+      <Vue3Marquee
+      class="container text-dark text-center fw-bold fs-4"
+      :pause-on-hover="true">
+        <span style="margin: 0 30px;">
+          開幕慶期間結帳時輸入優惠碼<span class="text-primary"> funnietravel</span>，即可享 <span class="text-primary">85</span> 折優惠 !
+        </span>
+        <span style="margin: 0 30px;">
+          開幕慶期間結帳時輸入優惠碼<span class="text-primary"> funnietravel</span>，即可享 <span class="text-primary">85</span> 折優惠 !
+        </span>
+      </Vue3Marquee>
     </div>
     <div class="py-5 about" id="about">
       <div class="container py-3">
@@ -19,7 +31,7 @@
           <p class="fs-5"><span class="fw-bolder fs-4">Funnie Travel</span> 是由一群來自台灣各地熱愛自由行，熱愛東南亞的專業團隊所組成，共同致力於提供客戶最優質、最專業與最安全的旅遊行程，讓旅人能夠放心感受旅行的美好。我們深信自由行是最能貼近當地生活及深入地探索當地文化和風土人情的旅遊方式，期望每個熱愛旅行的您，都能與我們一樣，享受自由行的美好。</p>
         </div>
         <div class="text-center pt-3">
-          <router-link class="btn btn-outline-secondary fw-bold" to="/about">關於我們</router-link>
+          <router-link class="btn btn-outline-secondary fw-bold home-about-btn" to="/about">關於我們</router-link>
         </div>
       </div>
     </div>
@@ -105,6 +117,7 @@ import SwiperSinga from '@/components/SwiperSingaMalay.vue'
 import SwiperBali from '@/components/SwiperThaiBa.vue'
 import Footer from '@/components/FooterComponent.vue'
 import ScrollTop from '@/components/ScrollTop.vue'
+import { Vue3Marquee } from 'vue3-marquee'
 
 export default {
   data () {
@@ -118,7 +131,8 @@ export default {
     SwiperSinga,
     SwiperBali,
     Footer,
-    ScrollTop
+    ScrollTop,
+    Vue3Marquee
   }
 }
 </script>

@@ -1,39 +1,33 @@
-// .product-card{
-//   transition: all 0.4s ease;
-//   &:hover{
-//     box-shadow: 0 1rem 3rem rgba(0,0,0,0.175);
-//   }
-// }
 .product-card{
   transition: all 0.4s ease;
   overflow: hidden;
   &:hover{
     box-shadow: 0 1rem 3rem rgba(0,0,0,0.175);
-    .product-img img {
+    .product-img img{
       transform: scale(1.1);
     }
 
-    .product-img .seemore-text {
+    .product-img .seemore-text{
       opacity: 1;
       backdrop-filter: opacity(50%);
       background-color: rgba(0,0,0,0.3);
     }
   }
 }
-.product-img {
+.product-img{
   overflow: hidden;
   position: relative;
-  .collect {
+  .collect{
     position: absolute;
     top: 10px;
     right: 10px;
     color: #fff;
   }
-  img {
+  img{
     transition: all 0.4s ease;
   }
 }
-.seemore-text {
+.seemore-text{
   width: 100%;
   height: 100%;
   position: absolute;

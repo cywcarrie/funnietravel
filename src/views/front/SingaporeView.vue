@@ -1,6 +1,14 @@
 <template>
   <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
   <div class="container px-0">
+    <div class="row mb-3 mb-lg-4">
+      <div class="col-12">
+        <div class="rounded products-all products-sinma">
+          <h2 class="text-white fw-bolder fs-1 pt-4 ps-4 mb-3">新加坡</h2>
+          <p class="text-white fw-bolder fs-5 px-4">獨一無二的新加坡，是個美麗的花園城市，充滿多元文化色彩，匯集世界各國的美食佳餚，更是免稅的購物天堂。</p>
+        </div>
+      </div>
+    </div>
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
       <div class="col mb-4" v-for="item in products" :key="item.id">
         <div class="card product-card w-100 h-100" style="width: 18rem">
@@ -10,7 +18,7 @@
               style=" height: 180px; background-position: center"
               :src="item.imageUrl"
               class="card-img-top object-fit-cover"
-              alt="thailandPictures"/>
+              alt="singaporePictures"/>
               <span class="seemore-text d-flex justify-content-center align-items-center text-white">
                 <i class="bi bi-search pe-1"></i>
                 查看更多
@@ -67,7 +75,7 @@ export default {
       this.$http.get(url).then((response) => {
         if (response.data.success) {
           response.data.products.forEach((item) => {
-            if (item.category === '泰國') {
+            if (item.category === '新加坡') {
               this.products.push(item)
             }
           })

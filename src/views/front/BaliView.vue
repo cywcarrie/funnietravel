@@ -1,6 +1,14 @@
 <template>
   <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
   <div class="container px-0">
+    <div class="row mb-3 mb-lg-4">
+      <div class="col-12">
+        <div class="rounded products-all products-balithai">
+          <h2 class="text-white fw-bolder fs-1 pt-4 ps-4 mb-3">峇里島</h2>
+          <p class="text-white fw-bolder fs-5 px-4">是集東南亞神話、藝術、夢幻於一身的南洋島國，也是許多人心目中的度假勝地，在這裡能夠使人放鬆身心，忘記煩惱，好好享受假期。</p>
+        </div>
+      </div>
+    </div>
     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
       <div class="col mb-4" v-for="item in products" :key="item.id">
         <div class="card product-card w-100 h-100" style="width: 18rem">
@@ -10,7 +18,7 @@
               style=" height: 180px; background-position: center"
               :src="item.imageUrl"
               class="card-img-top object-fit-cover"
-              alt="malaysiaPictures"/>
+              alt="baliPictures"/>
               <span class="seemore-text d-flex justify-content-center align-items-center text-white">
                 <i class="bi bi-search pe-1"></i>
                 查看更多
@@ -23,23 +31,23 @@
               <h5 class="card-title fw-bolder text-primary mb-3">{{ item.title }}</h5>
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <div class="h5 text-secondary" v-if="!item.price">NTD {{ $filters.currency(item.origin_price) }}</div>
-                <del class="h6 text-secondary" v-if="item.price"> NTD {{ $filters.currency(item.origin_price) }}</del>
+                <del class="h6 text-secondary" v-if="item.price">NTD {{ $filters.currency(item.origin_price) }}</del>
                 <div class="h5 text-primary fw-bold" v-if="item.price"> NTD {{ $filters.currency(item.price) }}</div>
               </div>
             </div>
           </router-link>
           <div class="card-footer border-0 bg-transparent pt-0 pb-3">
-              <button type="button" class="btn btn-outline-primary w-100"
-              :disabled="this.status.loadingItem === item.id"
-              @click="addCart(item.id)">
-                <div v-if="this.status.loadingItem === item.id"
-                class="spinner-border text-primary spinner-border-sm" role="status">
-                <span class="visually-hidden">Loading...</span>
-                </div>
-                <i class="bi bi-cart-fill"></i>
-                加入購物車
-              </button>
-            </div>
+            <button type="button" class="btn btn-outline-primary w-100"
+            :disabled="this.status.loadingItem === item.id"
+            @click="addCart(item.id)">
+              <div v-if="this.status.loadingItem === item.id"
+              class="spinner-border text-primary spinner-border-sm" role="status">
+              <span class="visually-hidden">Loading...</span>
+              </div>
+              <i class="bi bi-cart-fill"></i>
+              加入購物車
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -67,7 +75,7 @@ export default {
       this.$http.get(url).then((response) => {
         if (response.data.success) {
           response.data.products.forEach((item) => {
-            if (item.category === '馬來西亞') {
+            if (item.category === '峇里島') {
               this.products.push(item)
             }
           })
