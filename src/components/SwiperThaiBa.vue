@@ -1,7 +1,7 @@
 <template>
   <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
    <swiper
-    class="pb-5"
+    class="pb-5 thaibaswiper"
     :modules="modules"
     :slides-per-view="1"
     :space-between="20"
