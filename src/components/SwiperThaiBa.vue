@@ -1,7 +1,7 @@
 <template>
   <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
    <swiper
-    class="pb-5 thaibaswiper"
+    class="pb-5"
     :modules="modules"
     :slides-per-view="1"
     :space-between="20"
@@ -26,7 +26,7 @@
   >
     <swiper-slide v-for="item in products" :key="item.id">
       <router-link :to="`/product/${item.id}`">
-        <div class=" card product-card border border-secondary box-shadow w-100 h-100" style="width: 18rem">
+        <div class=" card bg-light product-card border border-secondary box-shadow w-100 h-100" style="width: 18rem">
           <img
           style=" height: 180px; background-position: center"
             :src="item.imageUrl"

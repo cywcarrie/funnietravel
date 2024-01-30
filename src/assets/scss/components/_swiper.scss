@@ -21,22 +21,6 @@
   }
 }
 
-.thaibaswiper > .swiper-button-prev,
-.thaibaswiper > .swiper-button-next{
-  top: 45% !important;
-  background-color: #76a2bd;
-  opacity: 0.9;
-  padding: 25px;
-  border-radius: 20px;
-  box-shadow: 0 0 0.5rem rgba(0,0,0,0.3);
-  color: white !important;
-  transition: all ease 0.4s;
-  &:hover{
-    transform: scale(1.2);
-    color: black !important;
-  }
-}
-
 .swiper-button-prev:after, .swiper-button-next:after {
   font-size: 25px !important;
   font-weight: bolder;
