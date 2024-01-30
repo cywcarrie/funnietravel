@@ -8,20 +8,42 @@
         <h5 class="text-nowrap"><span class="fw-bold fs-4">Funnie</span> 給您輕鬆快樂自由行</h5>
       </div>
       <div class="d-flex flex-column align-items-center text-white mt-5 pt-5 more position-absolute" data-aos="fade-down" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="50">
-        <router-link class="btn fw-bold px-5 py-2 rounded-0 border border-white home-first-btn" to="/user/all">瀏覽行程</router-link>
+        <router-link class="btn fw-bold px-5 py-2 rounded-0 border border-white home-first-btn" to="/products/全部">瀏覽行程</router-link>
       </div>
     </div>
-    <div class="bg-light py-3">
-      <Vue3Marquee
-      class="container text-dark text-center fw-bold fs-4"
-      :pause-on-hover="true">
-        <span style="margin: 0 30px;">
-          開幕慶期間結帳時輸入優惠碼<span class="text-primary"> funnietravel</span>，即可享 <span class="text-primary">85</span> 折優惠 !
-        </span>
-        <span style="margin: 0 30px;">
-          開幕慶期間結帳時輸入優惠碼<span class="text-primary"> funnietravel</span>，即可享 <span class="text-primary">85</span> 折優惠 !
-        </span>
-      </Vue3Marquee>
+    <div class="py-5 bg-light">
+      <div class="container py-3">
+        <div class="row justify-content-center">
+          <div class="col-md-3 col-sm-6">
+            <router-link to="/products/新加坡" class="mr-auto ml-auto mb-2 homebtn-img homebtn-img1 d-flex align-items-center justify-content-center rounded-2">
+              <h2 class="text-light position-absolute">
+                新加坡
+              </h2>
+            </router-link>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <router-link to="/products/馬來西亞" class="mr-auto ml-auto mb-2 homebtn-img homebtn-img2 d-flex align-items-center justify-content-center rounded-2">
+              <h2 class="text-light position-absolute">
+                馬來西亞
+              </h2>
+            </router-link>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <router-link to="/products/泰國" class=" mr-auto ml-auto mb-2 homebtn-img homebtn-img3 d-flex align-items-center justify-content-center rounded-2">
+              <h2 class="text-light position-absolute">
+                泰國
+              </h2>
+            </router-link>
+          </div>
+          <div class="col-md-3 col-sm-6">
+            <router-link to="/products/峇里島" class=" mr-auto ml-auto mb-2 homebtn-img homebtn-img4 d-flex align-items-center justify-content-center rounded-2">
+              <h2 class="text-light position-absolute">
+                峇里島
+              </h2>
+            </router-link>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="py-5 about" id="about">
       <div class="container py-3">
@@ -35,41 +57,7 @@
         </div>
       </div>
     </div>
-    <div class="py-5 bg-light">
-      <div class="container py-3">
-        <div class="row justify-content-center">
-          <div class="col-md-3 col-sm-6">
-            <router-link to="/user/singapore" class="mr-auto ml-auto mb-2 homebtn-img homebtn-img1 d-flex align-items-center justify-content-center rounded-2">
-              <h2 class="text-light position-absolute">
-                新加坡
-              </h2>
-            </router-link>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <router-link to="/user/malaysia" class="mr-auto ml-auto mb-2 homebtn-img homebtn-img2 d-flex align-items-center justify-content-center rounded-2">
-              <h2 class="text-light position-absolute">
-                馬來西亞
-              </h2>
-            </router-link>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <router-link to="/user/thailand" class=" mr-auto ml-auto mb-2 homebtn-img homebtn-img3 d-flex align-items-center justify-content-center rounded-2">
-              <h2 class="text-light position-absolute">
-                泰國
-              </h2>
-            </router-link>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <router-link to="/user/bali" class=" mr-auto ml-auto mb-2 homebtn-img homebtn-img4 d-flex align-items-center justify-content-center rounded-2">
-              <h2 class="text-light position-absolute">
-                峇里島
-              </h2>
-            </router-link>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class=" mt-5 bg-white">
+    <div class="mt-5 bg-white">
       <div class="container py-3">
         <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">熱門行程推薦</h2>
         <Swiper />
@@ -80,18 +68,18 @@
         <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">Funnie 帶您 HEN 瘋玩新馬</h2>
         <SwiperSinga />
         <div class="text-end">
-          <router-link to='/user/all' class="btn btn-primary rounded-pill">
+          <router-link to='/products/全部' class="btn btn-primary rounded-pill">
           更多行程<i class="bi bi-caret-right-fill"></i>
           </router-link>
         </div>
       </div>
     </div>
-    <div class=" mt-5 bg-white">
+    <div class="mt-5 bg-white">
       <div class="container py-3">
         <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">Funnie 帶您 FUN 鬆遊泰峇</h2>
         <SwiperBali />
         <div class="text-end">
-          <router-link to='/user/all' class="btn btn-primary rounded-pill">
+          <router-link to='/products/全部' class="btn btn-primary rounded-pill">
           更多行程<i class="bi bi-caret-right-fill"></i>
           </router-link>
         </div>
@@ -117,7 +105,6 @@ import SwiperSinga from '@/components/SwiperSingaMalay.vue'
 import SwiperBali from '@/components/SwiperThaiBa.vue'
 import Footer from '@/components/FooterComponent.vue'
 import ScrollTop from '@/components/ScrollTop.vue'
-import { Vue3Marquee } from 'vue3-marquee'
 
 export default {
   data () {
@@ -131,8 +118,7 @@ export default {
     SwiperSinga,
     SwiperBali,
     Footer,
-    ScrollTop,
-    Vue3Marquee
+    ScrollTop
   }
 }
 </script>

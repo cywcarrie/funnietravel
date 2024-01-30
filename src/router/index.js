@@ -38,35 +38,9 @@ const routes = [
     ]
   },
   {
-    path: '/user',
-    component: () => import('../views/front/UserProductsList.vue'),
-    children: [
-      {
-        path: '',
-        name: 'Products',
-        redirect: '/user/all'
-      },
-      {
-        path: 'all',
-        component: () => import('../views/front/AllProucts.vue')
-      },
-      {
-        path: 'singapore',
-        component: () => import('../views/front/SingaporeView.vue')
-      },
-      {
-        path: 'malaysia',
-        component: () => import('../views/front/MalaysiaView.vue')
-      },
-      {
-        path: 'bali',
-        component: () => import('../views/front/BaliView.vue')
-      },
-      {
-        path: 'thailand',
-        component: () => import('../views/front/ThailandView.vue')
-      }
-    ]
+    name: 'products',
+    path: '/products/:category',
+    component: () => import('../views/front/UserProducts.vue')
   },
   {
     name: 'product',

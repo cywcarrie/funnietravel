@@ -2,7 +2,7 @@
   <Navbar />
   <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner1 container-fluid">
-    <h2 class="position-absolute text-center text-white fw-bolder">關於我們</h2>
+    <h2 class="position-absolute text-center text-white fw-bolder banner-title">關於我們</h2>
   </div>
   <section class="mb-5">
     <div class="container">

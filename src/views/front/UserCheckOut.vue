@@ -2,7 +2,7 @@
   <Navbar />
   <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner2 container-fluid">
-  <h2 class="position-absolute text-center text-white fw-bolder">結帳流程</h2>
+    <h2 class="position-absolute text-center text-white fw-bolder banner-title">結帳流程</h2>
   </div>
   <section class="mb-5">
     <div class="container">
@@ -60,7 +60,6 @@
               v-model="form.user.email"></FieldVue>
               <ErrorMessage name="email" class="invalid-feedback"></ErrorMessage>
             </div>
-
             <div class="mb-3">
               <label for="name" class="form-label">訂購人姓名<small class="ps-1 text-danger">(必填)</small></label>
               <FieldVue id="name" name="姓名" type="text" class="form-control"
@@ -69,7 +68,6 @@
               v-model="form.user.name"></FieldVue>
               <ErrorMessage name="姓名" class="invalid-feedback"></ErrorMessage>
             </div>
-
             <div class="mb-3">
               <label for="tel" class="form-label">訂購人電話<small class="ps-1 text-danger">(必填)</small></label>
               <FieldVue id="tel" name="電話" type="tel" class="form-control"
@@ -78,7 +76,6 @@
               v-model="form.user.tel"></FieldVue>
               <ErrorMessage name="電話" class="invalid-feedback"></ErrorMessage>
             </div>
-
             <div class="mb-3">
               <label for="address" class="form-label">訂購人地址<small class="ps-1 text-danger">(必填)</small></label>
               <FieldVue id="address" name="地址" type="text" class="form-control"
@@ -87,7 +84,6 @@
               v-model="form.user.address"></FieldVue>
               <ErrorMessage name="地址" class="invalid-feedback"></ErrorMessage>
             </div>
-
             <div class="mb-3">
               <label for="message" class="form-label">留言</label>
               <textarea name="" id="message" class="form-control" cols="30" rows="10"

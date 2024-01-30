@@ -2,7 +2,7 @@
   <Navbar />
   <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner2 container-fluid">
-    <h2 class="position-absolute text-center text-white fw-bolder">結帳流程</h2>
+    <h2 class="position-absolute text-center text-white fw-bolder banner-title">結帳流程</h2>
   </div>
   <section class="mb-5">
     <div class="container">
@@ -65,7 +65,7 @@
                 <tr class="table-nowrap">
                   <th>付款狀態</th>
                   <td>
-                    <span v-if="!order.is_paid" class="text-nowrap">尚未付款</span>
+                    <span v-if="!order.is_paid" class="text-nowrap text-danger">尚未付款</span>
                     <span v-else class="text-primary fw-bold text-nowrap">付款完成</span>
                   </td>
                 </tr>
@@ -75,7 +75,7 @@
                 <button class="btn btn-primary ms-auto" type="submit">確認付款<i class="bi bi-caret-right-fill"></i></button>
               </div>
               <div class="text-end" v-if="order.is_paid === true">
-                <router-link to="/user/all" class="btn btn-primary ms-auto">繼續選購</router-link>
+                <router-link to="/products/全部" class="btn btn-primary ms-auto">繼續選購</router-link>
               </div>
             </form>
           </div>

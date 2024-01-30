@@ -2,7 +2,7 @@
   <Navbar />
   <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner1 container-fluid">
-    <h2 class="position-absolute text-center text-white fw-bolder">行程資訊</h2>
+    <h2 class="position-absolute text-center text-white fw-bolder banner-title">行程資訊</h2>
   </div>
   <section class="mb-5">
     <div class="container">
@@ -10,7 +10,7 @@
       <nav aria-label="breadcrumb" class="mt-3 mb-md-4 d-flex justify-content-start d-none d-md-block">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><router-link to="/" class="text-dark hover-nav fw-bold">首頁</router-link></li>
-          <li class="breadcrumb-item"><router-link to="/user/all" class="text-dark hover-nav fw-bold">行程列表</router-link></li>
+          <li class="breadcrumb-item"><router-link to="/products/全部" class="text-dark hover-nav fw-bold">行程列表</router-link></li>
           <li class="breadcrumb-item active" aria-current="page">{{ product.title }}</li>
         </ol>
       </nav>
