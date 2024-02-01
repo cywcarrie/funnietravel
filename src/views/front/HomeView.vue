@@ -13,34 +13,40 @@
     </div>
     <div class="py-5 bg-light">
       <div class="container py-3">
-        <div class="row justify-content-center">
-          <div class="col-md-3 col-sm-6">
-            <router-link to="/products/新加坡" class="mr-auto ml-auto mb-2 homebtn-img homebtn-img1 d-flex align-items-center justify-content-center rounded-2">
-              <h2 class="text-light position-absolute">
-                新加坡
-              </h2>
-            </router-link>
+        <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">選擇我們的好處</h2>
+        <div class="row">
+          <div class="col-lg-4 text-center p-0" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="shadow m-2 py-2">
+              <i class="bi bi-people-fill m-2 text-primary fs-1"></i>
+              <div>
+                <h3 class="m-2 fw-bold">優質的旅遊行程</h3>
+                <p class="m-2" style="height: 3rem">
+                  所有行程皆為本公司專業團隊設計
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="col-md-3 col-sm-6">
-            <router-link to="/products/馬來西亞" class="mr-auto ml-auto mb-2 homebtn-img homebtn-img2 d-flex align-items-center justify-content-center rounded-2">
-              <h2 class="text-light position-absolute">
-                馬來西亞
-              </h2>
-            </router-link>
+          <div class="col-lg-4 text-center p-0" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="shadow m-2 py-2">
+              <i class="bi bi-person-check-fill m-2 text-primary fs-1"></i>
+              <div>
+                <h3 class="m-2 fw-bold">專業導遊導覽</h3>
+                <p class="m-2" style="height: 3rem">
+                  專業導遊會全程同行讓您的旅程不再走馬看花
+                </p>
+              </div>
+            </div>
           </div>
-          <div class="col-md-3 col-sm-6">
-            <router-link to="/products/泰國" class=" mr-auto ml-auto mb-2 homebtn-img homebtn-img3 d-flex align-items-center justify-content-center rounded-2">
-              <h2 class="text-light position-absolute">
-                泰國
-              </h2>
-            </router-link>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <router-link to="/products/峇里島" class=" mr-auto ml-auto mb-2 homebtn-img homebtn-img4 d-flex align-items-center justify-content-center rounded-2">
-              <h2 class="text-light position-absolute">
-                峇里島
-              </h2>
-            </router-link>
+          <div class="col-lg-4 text-center p-0" data-aos="zoom-in" data-aos-duration="1000">
+            <div class="shadow m-2 py-2">
+              <i class="bi bi-cash-coin m-2 text-primary fs-1"></i>
+              <div>
+                <h3 class="m-2 fw-bold">合理的價格</h3>
+                <p class="m-2" style="height: 3rem">
+                  以合理的價格享受優質旅遊體驗
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -57,30 +63,52 @@
         </div>
       </div>
     </div>
-    <div class="mt-5 bg-white">
+    <div class="py-5 bg-light">
       <div class="container py-3">
-        <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">熱門行程推薦</h2>
-        <Swiper />
-      </div>
-    </div>
-    <div class=" mt-5 bg-white">
-      <div class="container py-3">
-        <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">Funnie 帶您 HEN 瘋玩新馬</h2>
-        <SwiperSinga />
-        <div class="text-end">
-          <router-link to='/products/全部' class="btn btn-primary rounded-pill">
-          更多行程<i class="bi bi-caret-right-fill"></i>
-          </router-link>
+        <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">選擇想去的地方</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-3 col-md-6">
+            <router-link to="/products/新加坡" class="mb-2 mb-lg-0 homebtn-img homebtn-img1 d-flex align-items-center justify-content-center rounded-2" data-aos="zoom-in" data-aos-duration="1000">
+              <h3 class="text-center text-white position-absolute">
+                新加坡<br>
+                Singapore
+              </h3>
+            </router-link>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <router-link to="/products/馬來西亞" class="mb-2 mb-lg-0 homebtn-img homebtn-img2 d-flex align-items-center justify-content-center rounded-2" data-aos="zoom-in" data-aos-duration="1000">
+              <h3 class="text-center text-white position-absolute">
+                馬來西亞<br>
+                Malaysia
+              </h3>
+            </router-link>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <router-link to="/products/泰國" class="mb-2 mb-lg-0 homebtn-img homebtn-img3 d-flex align-items-center justify-content-center rounded-2" data-aos="zoom-in" data-aos-duration="1000">
+              <h3 class="text-center text-white position-absolute">
+                泰國<br>
+                Thailand
+              </h3>
+            </router-link>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <router-link to="/products/峇里島" class="homebtn-img homebtn-img4 d-flex align-items-center justify-content-center rounded-2" data-aos="zoom-in" data-aos-duration="1000">
+              <h3 class="text-center text-white position-absolute">
+                峇里島<br>
+                Bali
+              </h3>
+            </router-link>
+          </div>
         </div>
       </div>
     </div>
     <div class="mt-5 bg-white">
       <div class="container py-3">
-        <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">Funnie 帶您 FUN 鬆遊泰峇</h2>
-        <SwiperBali />
+        <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">熱門行程推薦</h2>
+        <Swiper />
         <div class="text-end">
           <router-link to='/products/全部' class="btn btn-primary rounded-pill">
-          更多行程<i class="bi bi-caret-right-fill"></i>
+            更多行程<i class="bi bi-caret-right-fill"></i>
           </router-link>
         </div>
       </div>
@@ -101,8 +129,6 @@
 <script>
 import Navbar from '@/components/UserNavBar.vue'
 import Swiper from '@/components/SwiperComponent.vue'
-import SwiperSinga from '@/components/SwiperSingaMalay.vue'
-import SwiperBali from '@/components/SwiperThaiBa.vue'
 import Footer from '@/components/FooterComponent.vue'
 import ScrollTop from '@/components/ScrollTop.vue'
 
@@ -115,8 +141,6 @@ export default {
   components: {
     Navbar,
     Swiper,
-    SwiperSinga,
-    SwiperBali,
     Footer,
     ScrollTop
   }
