@@ -30,9 +30,9 @@
             <div class="shadow m-2 py-2">
               <i class="bi bi-person-check-fill m-2 text-primary fs-1"></i>
               <div>
-                <h3 class="m-2 fw-bold">專業導遊導覽</h3>
+                <h3 class="m-2 fw-bold">專業導遊同行</h3>
                 <p class="m-2" style="height: 3rem">
-                  專業導遊會全程同行讓您的旅程不再走馬看花
+                  專業導遊全程同行讓您的旅程不再走馬看花
                 </p>
               </div>
             </div>
