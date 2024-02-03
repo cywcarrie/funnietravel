@@ -1,7 +1,7 @@
 export default {
   全部: {
     name: '全部',
-    describe: '東南亞熱門旅遊的四個國家，峇里島、泰國、新加坡、馬來西亞。',
+    describe: '東南亞熱門旅遊的四個國家，泰國、新加坡、馬來西亞、印尼 (峇里島)。',
     img: 'https://images.unsplash.com/photo-1595290429614-88ba93221dba?q=80&w=1024&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
   },
   峇里島: {
