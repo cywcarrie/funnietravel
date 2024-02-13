@@ -155,10 +155,12 @@ export default {
         product_id: item.product_id,
         qty: item.qty
       }
-      this.$http.put(url, { data: cart }).then((res) => {
-        this.status.loadingItem = ''
-        this.getCart()
-        this.emitter.emit('updatecart')
+      this.$http.put(url, { data: cart }).then((response) => {
+        if (response.data.success) {
+          this.status.loadingItem = ''
+          this.getCart()
+          this.emitter.emit('updatecart')
+        }
       }).catch(error => {
         this.emitter.emit('push-message', {
           style: 'danger',

@@ -35,7 +35,7 @@
           style=" height: 180px; background-position: center"
             :src="item.imageUrl"
             class="card-img-top object-fit-cover"
-            alt=""
+            alt="swiperImage"
           />
           <div class="card-body p-3">
             <div class="d-flex justify-content-start text-primary fw-bold">

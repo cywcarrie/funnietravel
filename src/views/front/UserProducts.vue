@@ -79,7 +79,7 @@
                     style=" height: 180px; background-position: center"
                     :src="item.imageUrl"
                     class="card-img-top object-fit-cover"
-                    alt="allProuctsPictures"/>
+                    alt="allProuctsImages"/>
                     <span class="seemore-text d-flex justify-content-center align-items-center text-white">
                       <i class="bi bi-search pe-1"></i>
                       查看更多

@@ -75,11 +75,11 @@ export default {
     getProducts (page = 1) {
       const api = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/products/?page=${page}`
       this.isLoading = true
-      this.$http.get(api).then((res) => {
+      this.$http.get(api).then((response) => {
         this.isLoading = false
-        if (res.data.success) {
-          this.products = res.data.products
-          this.pagination = res.data.pagination
+        if (response.data.success) {
+          this.products = response.data.products
+          this.pagination = response.data.pagination
         }
       })
     },

@@ -47,7 +47,7 @@
                   @change="uploadFile"
                 />
               </div>
-              <img class="img-fluid" :src="tempProduct.imageUrl" alt="" />
+              <img class="img-fluid" :src="tempProduct.imageUrl" alt="tempProductImage" />
               <div class="mt-5" v-if="tempProduct.images">
                 <div v-for="(image, key) in tempProduct.images" class="mb-3 input-group" :key="key">
                   <input

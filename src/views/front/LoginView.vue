@@ -49,12 +49,17 @@ export default {
     signIn () {
       const api = `${process.env.VUE_APP_API}admin/signin`
       this.$http.post(api, this.user)
-        .then((res) => {
-          if (res.data.success) {
-            const { token, expired } = res.data
+        .then((response) => {
+          if (response.data.success) {
+            const { token, expired } = response.data
             document.cookie = `hexToken=${token}; expires=${new Date(expired)}`
             this.$router.push('/dashboard/products')
           }
+        }).catch(error => {
+          this.emitter.emit('push-message', {
+            style: 'danger',
+            title: `${error.response.data.message}`
+          })
         })
     }
   }

@@ -147,8 +147,8 @@ export default {
       const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/order`
       const order = this.form
       this.$http.post(url, { data: order })
-        .then((res) => {
-          this.$router.push(`/checkorder/${res.data.orderId}`)
+        .then((response) => {
+          this.$router.push(`/checkorder/${response.data.orderId}`)
         }).catch(error => {
           this.emitter.emit('push-message', {
             style: 'danger',

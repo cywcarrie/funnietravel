@@ -6,32 +6,32 @@
           <div class="col-6 col-lg-2 mb-3">
             <h5 class="text-white fw-bold">全球據點</h5>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-geo-alt-fill text-secondary"></i>新加坡</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-geo-alt-fill text-secondary"></i>馬來西亞</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-geo-alt-fill text-secondary"></i>泰國</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-geo-alt-fill text-secondary"></i>印尼</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-geo-alt-fill text-secondary"></i>韓國</a></li>
+              <li class="nav-item mb-2"><a href="#" @click.prevent="" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-geo-alt-fill text-secondary"></i>新加坡</a></li>
+              <li class="nav-item mb-2"><a href="#" @click.prevent="" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-geo-alt-fill text-secondary"></i>馬來西亞</a></li>
+              <li class="nav-item mb-2"><a href="#" @click.prevent="" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-geo-alt-fill text-secondary"></i>泰國</a></li>
+              <li class="nav-item mb-2"><a href="#" @click.prevent="" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-geo-alt-fill text-secondary"></i>印尼</a></li>
+              <li class="nav-item mb-2"><a href="#" @click.prevent="" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-geo-alt-fill text-secondary"></i>韓國</a></li>
             </ul>
           </div>
 
           <div class="col-6 col-lg-2 mb-3">
             <h5 class="text-white fw-bold">追蹤 Funnie</h5>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-facebook text-secondary"></i>Facebook</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-instagram text-secondary"></i>Instagram</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-twitter  text-secondary"></i>Twitter</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-wordpress text-secondary"></i>WordPress</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-youtube text-secondary"></i>YouTube</a></li>
+              <li class="nav-item mb-2"><a href="#" @click.prevent="" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-facebook text-secondary"></i>Facebook</a></li>
+              <li class="nav-item mb-2"><a href="#" @click.prevent="" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-instagram text-secondary"></i>Instagram</a></li>
+              <li class="nav-item mb-2"><a href="#" @click.prevent="" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-twitter  text-secondary"></i>Twitter</a></li>
+              <li class="nav-item mb-2"><a href="#" @click.prevent="" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-wordpress text-secondary"></i>WordPress</a></li>
+              <li class="nav-item mb-2"><a href="#" @click.prevent="" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-youtube text-secondary"></i>YouTube</a></li>
             </ul>
           </div>
 
           <div class="col-6 col-lg-2 mb-3">
             <h5 class="text-white fw-bold">聯絡 Funnie</h5>
             <ul class="nav flex-column">
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-geo-alt-fill text-secondary"></i>台北</a></li>
+              <li class="nav-item mb-2"><a href="#" @click.prevent="" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-geo-alt-fill text-secondary"></i>台北</a></li>
               <li class="nav-item mb-2"><a href="tel:+886-2-1234567" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-telephone-fill text-secondary"></i>123-4567</a></li>
               <li class="nav-item mb-2"><a href="tel:+886-2-0000000" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-telephone-fill text-secondary"></i>000-0000</a></li>
-              <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-person-fill text-secondary"></i>9:00 - 18:00</a></li>
+              <li class="nav-item mb-2"><a href="#" @click.prevent="" class="nav-link p-0 text-white footer-icon-hover"><i class="bi bi-person-fill text-secondary"></i>9:00 - 18:00</a></li>
             </ul>
           </div>
 
