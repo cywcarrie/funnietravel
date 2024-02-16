@@ -57,32 +57,32 @@
               <FieldVue id="email" name="email" type="email" class="form-control"
               :class="{ 'is-invalid': errors['email'] }"
               placeholder="請輸入 Email" rules="email|required"
-              v-model="form.user.email"></FieldVue>
-              <ErrorMessage name="email" class="invalid-feedback"></ErrorMessage>
+              v-model="form.user.email" />
+              <ErrorMessage name="email" class="invalid-feedback" />
             </div>
             <div class="mb-3">
               <label for="name" class="form-label">訂購人姓名<small class="ps-1 text-danger">(必填)</small></label>
               <FieldVue id="name" name="姓名" type="text" class="form-control"
               :class="{ 'is-invalid': errors['姓名'] }"
               placeholder="請輸入姓名" rules="required"
-              v-model="form.user.name"></FieldVue>
-              <ErrorMessage name="姓名" class="invalid-feedback"></ErrorMessage>
+              v-model="form.user.name" />
+              <ErrorMessage name="姓名" class="invalid-feedback" />
             </div>
             <div class="mb-3">
               <label for="tel" class="form-label">訂購人電話<small class="ps-1 text-danger">(必填)</small></label>
               <FieldVue id="tel" name="電話" type="tel" class="form-control"
               :class="{ 'is-invalid': errors['電話'] }"
               placeholder="請輸入電話" rules="required"
-              v-model="form.user.tel"></FieldVue>
-              <ErrorMessage name="電話" class="invalid-feedback"></ErrorMessage>
+              v-model="form.user.tel" />
+              <ErrorMessage name="電話" class="invalid-feedback" />
             </div>
             <div class="mb-3">
               <label for="address" class="form-label">訂購人地址<small class="ps-1 text-danger">(必填)</small></label>
               <FieldVue id="address" name="地址" type="text" class="form-control"
               :class="{ 'is-invalid': errors['地址'] }"
               placeholder="請輸入地址" rules="required"
-              v-model="form.user.address"></FieldVue>
-              <ErrorMessage name="地址" class="invalid-feedback"></ErrorMessage>
+              v-model="form.user.address" />
+              <ErrorMessage name="地址" class="invalid-feedback" />
             </div>
             <div class="mb-3">
               <label for="message" class="form-label">留言</label>

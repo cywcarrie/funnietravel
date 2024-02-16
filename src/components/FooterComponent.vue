@@ -46,10 +46,10 @@
                 <FieldVue id="email" name="email" type="email" class="form-control"
                 :class="{ 'is-invalid': errors['email'] , 'is-valid': !errors['email'] && subscribe.email !== ''}"
                 placeholder="請輸入 Email" rules="email|required"
-                v-model="subscribe.email"></FieldVue>
+                v-model="subscribe.email" />
                 <button class="btn btn-secondary text-nowrap text-white rounded-end" type="submit"
                 :disabled="errors['email'] || !subscribe.email">訂閱</button>
-                <ErrorMessage name="email" class="invalid-feedback"></ErrorMessage>
+                <ErrorMessage name="email" class="invalid-feedback" />
               </div>
             </FormVue>
           </div>
