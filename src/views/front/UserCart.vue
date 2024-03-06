@@ -159,7 +159,7 @@ export default {
         if (response.data.success) {
           this.status.loadingItem = ''
           this.getCart()
-          this.emitter.emit('updatecart')
+          this.emitter.emit('update-cart')
         }
       }).catch(error => {
         this.emitter.emit('push-message', {
@@ -174,7 +174,7 @@ export default {
       this.isLoading = true
       this.$http.delete(url).then((response) => {
         this.$httpMessageState(response, '移除購物車')
-        this.emitter.emit('updatecart')
+        this.emitter.emit('update-cart')
         this.status.loadingItem = ''
         this.getCart()
         this.isLoading = false

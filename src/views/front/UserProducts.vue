@@ -211,7 +211,7 @@ export default {
       this.$http.post(url, { data: cart })
         .then((response) => {
           this.$httpMessageState(response, '加入購物車')
-          this.emitter.emit('updatecart')
+          this.emitter.emit('update-cart')
           this.status.loadingItem = ''
         }).catch(error => {
           this.emitter.emit('push-message', {

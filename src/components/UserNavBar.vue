@@ -81,12 +81,12 @@ export default {
   },
   mounted () {
     this.getCart()
-    this.emitter.on('updatecart', () => {
+    this.emitter.on('update-cart', () => {
       this.getCart()
     })
   },
   unmounted () {
-    this.emitter.off('updatecart')
+    this.emitter.off('update-cart')
   }
 }
 </script>
