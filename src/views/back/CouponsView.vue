@@ -104,7 +104,7 @@ export default {
       } else {
         const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/admin/coupon/${this.tempCoupon.id}`
         this.$http.put(url, { data: this.tempCoupon }).then((response) => {
-          this.$httpMessageState(response, '新增優惠券')
+          this.$httpMessageState(response, '更新優惠券')
           this.getCoupons()
           this.$refs.couponModal.hideModal()
         })
