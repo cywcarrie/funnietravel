@@ -1,6 +1,6 @@
 <template>
   <div class="toast-container position-fixed pe-3 end-0 toast-position" style="z-index: 1050">
-    <Toast v-for="(msg, key) in messages" :key="key"
+    <Toast v-for="(msg, index) in messages" :key="index"
       :msg="msg"
     />
   </div>
