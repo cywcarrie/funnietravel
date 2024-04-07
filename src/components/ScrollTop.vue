@@ -13,7 +13,7 @@ export default {
     }
   },
   methods: {
-    handleScroll: function () {
+    handleScroll () {
       if (this.scTimer) return
       this.scTimer = setTimeout(() => {
         this.scY = window.scrollY
@@ -30,11 +30,14 @@ export default {
   },
   mounted () {
     window.addEventListener('scroll', this.handleScroll)
+  },
+  unmounted () {
+    window.removeEventListener('scroll', this.handleScroll)
   }
 }
 
 </script>
-<style scoped lang="scss">
+<style lang="scss">
 .top{
     position: fixed;
     bottom: 30px;

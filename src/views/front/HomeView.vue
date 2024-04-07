@@ -121,7 +121,6 @@
         </div>
       </div>
     </div>
-    <ScrollTop />
   </section>
   <Footer />
 </template>
@@ -130,7 +129,6 @@
 import Navbar from '@/components/UserNavBar.vue'
 import Swiper from '@/components/SwiperComponent.vue'
 import Footer from '@/components/FooterComponent.vue'
-import ScrollTop from '@/components/ScrollTop.vue'
 
 export default {
   data () {
@@ -141,8 +139,7 @@ export default {
   components: {
     Navbar,
     Swiper,
-    Footer,
-    ScrollTop
+    Footer
   }
 }
 </script>

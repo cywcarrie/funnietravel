@@ -118,7 +118,6 @@
         </div>
       </div>
     </div>
-    <ScrollTop />
   </section>
   <Footer />
 </template>
@@ -127,15 +126,13 @@
 import Navbar from '@/components/UserNavBar.vue'
 import Pagination from '@/components/PaginationComponent.vue'
 import Footer from '@/components/FooterComponent.vue'
-import ScrollTop from '@/components/ScrollTop.vue'
 import categoryObjectData from '@/data/categoryObjectData'
 
 export default {
   components: {
     Navbar,
     Pagination,
-    Footer,
-    ScrollTop
+    Footer
   },
   data () {
     return {
