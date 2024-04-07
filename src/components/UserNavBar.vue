@@ -26,20 +26,20 @@
         <div class="collapse navbar-collapse fw-bold" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
             <li class="nav-item">
-              <router-link to="/about"  class="nav-link">關於我們</router-link>
+              <router-link to="/about" class="nav-link">關於我們</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/products/全部"  class="nav-link">行程列表</router-link>
+              <router-link to="/products/全部" class="nav-link">行程列表</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/favorite"  class="nav-link">我的最愛</router-link>
+              <router-link to="/favorite" class="nav-link">我的最愛</router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/faqs"  class="nav-link">常見問題</router-link>
+              <router-link to="/faqs" class="nav-link">常見問題</router-link>
             </li>
           </ul>
           <form class="form-inline d-flex justify-content-center">
-            <router-link to="/cart"  class="nav-link text-primary hover-nav position-relative">購物車<i class="bi bi-cart-fill fs-4 ps-1"></i>
+            <router-link to="/cart" class="nav-link text-primary hover-nav position-relative">購物車<i class="bi bi-cart-fill fs-4 ps-1"></i>
           <span class="badge text-white bg-danger position-absolute d-flex d-none d-lg-block" v-if="cart.length > 0" style="top:-6px; right:-11px;">{{ cart.length }}</span>
           </router-link>
           </form>
