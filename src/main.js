@@ -42,7 +42,3 @@ app.component('FormVue', Form)
 app.component('FieldVue', Field)
 app.component('ErrorMessage', ErrorMessage)
 app.mount('#app')
-
-router.afterEach((to, from, next) => {
-  window.scrollTo(0, 0)
-})
