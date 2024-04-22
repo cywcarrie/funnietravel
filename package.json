@@ -8,6 +8,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@types/aos": "^3.0.7",
     "@vee-validate/i18n": "^4.11.3",
     "@vee-validate/rules": "^4.11.3",
     "aos": "^2.3.4",
