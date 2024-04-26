@@ -64,9 +64,9 @@
               <div class="rounded products-all"
               :style="`
               background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),
-              url(${categorysArt[category].img});`">
+              url(${categoryIntro[category].img});`">
                 <h2 class="text-white fw-bolder fs-1 pt-4 ps-4">{{ category }}</h2>
-                <p class="text-white fw-bolder fs-5 px-4">{{ categorysArt[category].describe }}</p>
+                <p class="text-white fw-bolder fs-5 px-4">{{ categoryIntro[category].describe }}</p>
               </div>
             </div>
           </div>
@@ -139,7 +139,7 @@ export default {
       product: {},
       products: [],
       category: '',
-      categorysArt: categoryObjectData,
+      categoryIntro: categoryObjectData,
       pagination: {},
       isLoading: false,
       status: {
