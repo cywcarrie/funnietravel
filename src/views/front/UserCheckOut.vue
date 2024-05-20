@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
+  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70" />
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner2 container-fluid">
     <h2 class="position-absolute text-center text-white fw-bolder banner-title">結帳流程</h2>
   </div>
@@ -90,7 +90,7 @@
               v-model="form.message"></textarea>
             </div>
             <div class="d-flex justify-content-between">
-              <router-link class="btn btn-outline-primary" to="/cart"><i class="bi bi-caret-left-fill"></i>回上一頁</router-link>
+              <RouterLink class="btn btn-outline-primary" to="/cart"><i class="bi bi-caret-left-fill"></i>回上一頁</RouterLink>
               <button type="submit" class="btn btn-primary">確認訂單<i class="bi bi-caret-right-fill"></i></button>
             </div>
           </FormVue>

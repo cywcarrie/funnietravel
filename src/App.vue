@@ -1,6 +1,6 @@
 <template>
   <ToastMessages />
-  <router-view/>
+  <RouterView />
   <ScrollTop />
 </template>
 
@@ -8,7 +8,6 @@
 import emitter from '@/methods/emitter'
 import ToastMessages from '@/components/ToastMessages.vue'
 import ScrollTop from '@/components/ScrollTop.vue'
-// AOS
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import 'bootstrap/dist/js/bootstrap.bundle'
@@ -23,7 +22,6 @@ export default {
       emitter
     }
   },
-  // AOS
   mounted () {
     AOS.init()
   }

@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
+  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70" />
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner2 container-fluid">
     <h2 class="position-absolute text-center text-white fw-bolder banner-title">結帳流程</h2>
   </div>
@@ -75,7 +75,7 @@
                 <button class="btn btn-primary ms-auto" type="submit">確認付款<i class="bi bi-caret-right-fill"></i></button>
               </div>
               <div class="text-end" v-if="order.is_paid === true">
-                <router-link to="/products/全部" class="btn btn-primary ms-auto">繼續選購</router-link>
+                <RouterLink to="/products/全部" class="btn btn-primary ms-auto">繼續選購</RouterLink>
               </div>
             </form>
           </div>

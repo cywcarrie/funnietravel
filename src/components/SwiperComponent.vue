@@ -1,5 +1,5 @@
 <template>
-  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
+  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70" />
    <swiper
     class="pb-5"
     :modules="modules"
@@ -29,7 +29,7 @@
     }"
   >
     <swiper-slide v-for="item in products" :key="item.id">
-      <router-link :to="`/product/${item.id}`">
+      <RouterLink :to="`/product/${item.id}`">
         <div class=" card product-card box-shadow w-100 h-100" style="width: 18rem">
           <img
           style=" height: 180px; background-position: center"
@@ -49,7 +49,7 @@
             </div>
           </div>
         </div>
-      </router-link>
+      </RouterLink>
     </swiper-slide>
   </swiper>
 </template>

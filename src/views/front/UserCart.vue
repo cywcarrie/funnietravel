@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
+  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70" />
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner1 container-fluid">
     <h2 class="position-absolute text-center text-white fw-bolder banner-title">購物車</h2>
   </div>
@@ -9,7 +9,7 @@
       <a href="#" title="回上一頁" class="text-secondary fw-bold" @click.prevent="$router.go(-1)"><i class="bi bi-arrow-left-square-fill fs-2"></i></a>
         <nav aria-label="breadcrumb" class="mt-3 mb-md-4 d-flex justify-content-start">
           <ol class="breadcrumb">
-            <li class="breadcrumb-item"><router-link to="/" class="text-dark hover-nav fw-bold">首頁</router-link></li>
+            <li class="breadcrumb-item"><RouterLink to="/" class="text-dark hover-nav fw-bold">首頁</RouterLink></li>
             <li class="breadcrumb-item active" aria-current="page">購物車</li>
           </ol>
         </nav>
@@ -92,8 +92,8 @@
             </button>
           </div>
           <div class="d-flex justify-content-between mt-4 mb-4" v-if="cart.total !== 0">
-            <router-link class="btn btn-outline-primary" to="/products/全部">繼續選購</router-link>
-            <router-link class="btn btn-primary ms-auto" to="/checkout">前往結帳</router-link>
+            <RouterLink class="btn btn-outline-primary" to="/products/全部">繼續選購</RouterLink>
+            <RouterLink class="btn btn-primary ms-auto" to="/checkout">前往結帳</RouterLink>
           </div>
         </div>
       </template>
@@ -101,7 +101,7 @@
         <div class="py-5 mb-5">
           <div class="text-center pt-4">
             <h2 class="fw-bolder mb-5">您尚未有行程加入購物車</h2>
-            <router-link class="btn btn-primary btn-lg fw-bold" to="/products/全部">馬上開始選購吧 !</router-link>
+            <RouterLink class="btn btn-primary btn-lg fw-bold" to="/products/全部">馬上開始選購吧 !</RouterLink>
           </div>
         </div>
       </template>

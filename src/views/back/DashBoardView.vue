@@ -1,7 +1,7 @@
 <template>
   <Navbar />
   <div class="container-fluid mt-3 position-relative">
-    <router-view/>
+    <RouterView />
   </div>
 </template>
 

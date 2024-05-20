@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
+  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70" />
   <section>
     <div class="home d-flex justify-content-center align-items-center position-relative">
       <div class="text-center text-light home-content border" data-aos="fade-down" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="50">
@@ -8,7 +8,7 @@
         <h5 class="text-nowrap"><span class="fw-bold fs-4">Funnie</span> 給您輕鬆快樂自由行</h5>
       </div>
       <div class="d-flex flex-column align-items-center text-white mt-5 pt-5 more position-absolute" data-aos="fade-down" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="50">
-        <router-link class="btn fw-bold px-5 py-2 rounded-0 border border-white home-first-btn" to="/products/全部">瀏覽行程</router-link>
+        <RouterLink class="btn fw-bold px-5 py-2 rounded-0 border border-white home-first-btn" to="/products/全部">瀏覽行程</RouterLink>
       </div>
     </div>
     <div class="py-5 bg-light">
@@ -59,7 +59,7 @@
           <p class="fs-5"><span class="fw-bolder fs-4">Funnie Travel</span> 是由一群來自台灣各地熱愛自由行，熱愛東南亞的專業團隊所組成，共同致力於提供客戶最優質、最專業與最安全的旅遊行程，讓旅人能夠放心感受旅行的美好。我們深信自由行是最能貼近當地生活及深入地探索當地文化和風土人情的旅遊方式，期望每個熱愛旅行的您，都能與我們一樣，享受自由行的美好。</p>
         </div>
         <div class="text-center pt-3">
-          <router-link class="btn btn-outline-secondary fw-bold home-about-btn" to="/about">關於我們</router-link>
+          <RouterLink class="btn btn-outline-secondary fw-bold home-about-btn" to="/about">關於我們</RouterLink>
         </div>
       </div>
     </div>
@@ -68,36 +68,36 @@
         <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">選擇想去的地方</h2>
         <div class="row justify-content-center">
           <div class="col-lg-3 col-md-6">
-            <router-link to="/products/新加坡" class="mb-2 mb-lg-0 homebtn-img homebtn-img1 d-flex align-items-center justify-content-center rounded-2" data-aos="zoom-in" data-aos-duration="1000">
+            <RouterLink to="/products/新加坡" class="mb-2 mb-lg-0 homebtn-img homebtn-img1 d-flex align-items-center justify-content-center rounded-2" data-aos="zoom-in" data-aos-duration="1000">
               <h3 class="text-center text-white position-absolute">
                 新加坡<br>
                 Singapore
               </h3>
-            </router-link>
+            </RouterLink>
           </div>
           <div class="col-lg-3 col-md-6">
-            <router-link to="/products/馬來西亞" class="mb-2 mb-lg-0 homebtn-img homebtn-img2 d-flex align-items-center justify-content-center rounded-2" data-aos="zoom-in" data-aos-duration="1000">
+            <RouterLink to="/products/馬來西亞" class="mb-2 mb-lg-0 homebtn-img homebtn-img2 d-flex align-items-center justify-content-center rounded-2" data-aos="zoom-in" data-aos-duration="1000">
               <h3 class="text-center text-white position-absolute">
                 馬來西亞<br>
                 Malaysia
               </h3>
-            </router-link>
+            </RouterLink>
           </div>
           <div class="col-lg-3 col-md-6">
-            <router-link to="/products/泰國" class="mb-2 mb-lg-0 homebtn-img homebtn-img3 d-flex align-items-center justify-content-center rounded-2" data-aos="zoom-in" data-aos-duration="1000">
+            <RouterLink to="/products/泰國" class="mb-2 mb-lg-0 homebtn-img homebtn-img3 d-flex align-items-center justify-content-center rounded-2" data-aos="zoom-in" data-aos-duration="1000">
               <h3 class="text-center text-white position-absolute">
                 泰國<br>
                 Thailand
               </h3>
-            </router-link>
+            </RouterLink>
           </div>
           <div class="col-lg-3 col-md-6">
-            <router-link to="/products/峇里島" class="homebtn-img homebtn-img4 d-flex align-items-center justify-content-center rounded-2" data-aos="zoom-in" data-aos-duration="1000">
+            <RouterLink to="/products/峇里島" class="homebtn-img homebtn-img4 d-flex align-items-center justify-content-center rounded-2" data-aos="zoom-in" data-aos-duration="1000">
               <h3 class="text-center text-white position-absolute">
                 峇里島<br>
                 Bali
               </h3>
-            </router-link>
+            </RouterLink>
           </div>
         </div>
       </div>
@@ -107,9 +107,9 @@
         <h2 class="text-center fw-bolder mb-5 text-primary text-nowrap">熱門行程推薦</h2>
         <Swiper />
         <div class="text-end">
-          <router-link to='/products/全部' class="btn btn-primary rounded-pill">
+          <RouterLink to='/products/全部' class="btn btn-primary rounded-pill">
             更多行程<i class="bi bi-caret-right-fill"></i>
-          </router-link>
+          </RouterLink>
         </div>
       </div>
     </div>

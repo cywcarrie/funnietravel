@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
+  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70" />
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner1 container-fluid">
     <h2 class="position-absolute text-center text-white fw-bolder banner-title">我的最愛</h2>
   </div>
@@ -9,7 +9,7 @@
       <a href="#" title="回上一頁" class="text-secondary fw-bold" @click.prevent="$router.go(-1)"><i class="bi bi-arrow-left-square-fill fs-2"></i></a>
       <nav aria-label="breadcrumb" class="mt-3 mb-md-4 d-flex justify-content-start">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><router-link to="/" class="text-dark hover-nav fw-bold">首頁</router-link></li>
+          <li class="breadcrumb-item"><RouterLink to="/" class="text-dark hover-nav fw-bold">首頁</RouterLink></li>
           <li class="breadcrumb-item active" aria-current="page">我的最愛</li>
         </ol>
       </nav>
@@ -74,14 +74,14 @@
           </div>
         </div>
         <div class="text-end mt-4 mb-5">
-          <router-link class="btn btn-primary ms-auto text-end hover-btn" to="/cart">前往購物車<i class="bi bi-cart-fill ps-1"></i></router-link>
+          <RouterLink class="btn btn-primary ms-auto text-end hover-btn" to="/cart">前往購物車<i class="bi bi-cart-fill ps-1"></i></RouterLink>
         </div>
       </template>
       <template v-else>
         <div class="py-5 mb-5">
           <div class="text-center pt-4">
             <h2 class="fw-bold mb-5">您尚未有行程加入我的最愛</h2>
-            <router-link class="btn btn-primary btn-lg fw-bold" to="/products/全部">馬上開始瀏覽行程吧 !</router-link>
+            <RouterLink class="btn btn-primary btn-lg fw-bold" to="/products/全部">馬上開始瀏覽行程吧 !</RouterLink>
           </div>
         </div>
       </template>

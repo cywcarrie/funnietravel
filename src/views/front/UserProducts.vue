@@ -1,6 +1,6 @@
 <template>
   <Navbar />
-  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
+  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70" />
   <div class="d-flex justify-content-center align-items-center my-5 position-relative banner banner1 container-fluid">
     <h2 class="position-absolute text-center text-white fw-bolder banner-title">行程列表</h2>
   </div>
@@ -8,7 +8,7 @@
     <div class="container">
       <nav aria-label="breadcrumb" class="mt-3 mb-md-4 d-flex justify-content-start">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><router-link to="/" class="text-dark hover-nav fw-bold">首頁</router-link></li>
+          <li class="breadcrumb-item"><RouterLink to="/" class="text-dark hover-nav fw-bold">首頁</RouterLink></li>
           <li class="breadcrumb-item active" aria-current="page">行程列表</li>
         </ol>
       </nav>
@@ -73,7 +73,7 @@
           <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
             <div class="col mb-4" v-for="item in products" :key="item.id">
               <div class="card product-card w-100 h-100" style="width: 18rem">
-                <router-link class="" :to="`/product/${item.id}`">
+                <RouterLink class="" :to="`/product/${item.id}`">
                   <div class="product-img cursor-pointer" @click="getProduct(item.id)">
                     <img
                     style=" height: 180px; background-position: center"
@@ -96,7 +96,7 @@
                       <div class="h5 text-primary fw-bold" v-if="item.price"> NTD {{ $filters.currency(item.price) }} </div>
                     </div>
                   </div>
-                </router-link>
+                </RouterLink>
                 <div class="card-footer border-0 bg-transparent pt-0 pb-3">
                   <button type="button" class="btn btn-outline-primary w-100"
                   :disabled="this.status.loadingItem === item.id"

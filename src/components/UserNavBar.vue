@@ -1,5 +1,5 @@
 <template>
-  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70"/>
+  <LoadingVue :active="isLoading" :loader="'dots'" :color="'#336b87'" :width="70" :height="70" />
   <div class="fixed-top">
     <div class="bg-secondary py-1">
       <div class="container">
@@ -17,31 +17,31 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
       <div class="container">
-        <router-link to="/" class="navbar-brand me-auto d-flex align-items-center"
+        <RouterLink to="/" class="navbar-brand me-auto d-flex align-items-center"
             ><img src="../assets/img/logo.png" alt="funnie-logo"
-            style ="height:40px;"/><h1 class="logo text-primary fs-2 fw-bolder mb-0 px-2 me-5">Funnie</h1></router-link>
+            style ="height:40px;"/><h1 class="logo text-primary fs-2 fw-bolder mb-0 px-2 me-5">Funnie</h1></RouterLink>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse fw-bold" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0 text-center">
             <li class="nav-item">
-              <router-link to="/about" class="nav-link">關於我們</router-link>
+              <RouterLink to="/about" class="nav-link">關於我們</RouterLink>
             </li>
             <li class="nav-item">
-              <router-link to="/products/全部" class="nav-link">行程列表</router-link>
+              <RouterLink to="/products/全部" class="nav-link">行程列表</RouterLink>
             </li>
             <li class="nav-item">
-              <router-link to="/favorite" class="nav-link">我的最愛</router-link>
+              <RouterLink to="/favorite" class="nav-link">我的最愛</RouterLink>
             </li>
             <li class="nav-item">
-              <router-link to="/faqs" class="nav-link">常見問題</router-link>
+              <RouterLink to="/faqs" class="nav-link">常見問題</RouterLink>
             </li>
           </ul>
           <form class="form-inline d-flex justify-content-center">
-            <router-link to="/cart" class="nav-link text-primary hover-nav position-relative">購物車<i class="bi bi-cart-fill fs-4 ps-1"></i>
+            <RouterLink to="/cart" class="nav-link text-primary hover-nav position-relative">購物車<i class="bi bi-cart-fill fs-4 ps-1"></i>
           <span class="badge text-white bg-danger position-absolute d-flex d-none d-lg-block" v-if="cart.length > 0" style="top:-6px; right:-11px;">{{ cart.length }}</span>
-          </router-link>
+          </RouterLink>
           </form>
         </div>
       </div>
