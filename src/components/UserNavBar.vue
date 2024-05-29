@@ -6,10 +6,10 @@
         <Vue3Marquee
         class="container text-dark text-center fw-bold"
         :pause-on-hover="true">
-          <span style="margin: 0 30px;">
+          <span class="navbar-marquee">
             開幕慶期間結帳時輸入優惠碼<span class="text-white"> funnietravel</span>，即可享 <span class="text-white">85</span> 折優惠 !
           </span>
-          <span style="margin: 0 30px;">
+          <span class="navbar-marquee">
             開幕慶期間結帳時輸入優惠碼<span class="text-white"> funnietravel</span>，即可享 <span class="text-white">85</span> 折優惠 !
           </span>
         </Vue3Marquee>
@@ -18,8 +18,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
       <div class="container">
         <RouterLink to="/" class="navbar-brand me-auto d-flex align-items-center"
-            ><img src="../assets/img/logo.png" alt="funnie-logo"
-            style ="height:40px;"/><h1 class="logo text-primary fs-2 fw-bolder mb-0 px-2 me-5">Funnie</h1></RouterLink>
+            ><img src="../assets/img/logo.png" alt="funnie-logo" class="funnie-logo-img"/><h1 class="logo text-primary fs-2 fw-bolder mb-0 px-2 me-5">Funnie</h1></RouterLink>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -40,7 +39,7 @@
           </ul>
           <form class="form-inline d-flex justify-content-center">
             <RouterLink to="/cart" class="nav-link text-primary hover-nav position-relative">購物車<i class="bi bi-cart-fill fs-4 ps-1"></i>
-          <span class="badge text-white bg-danger position-absolute d-flex d-none d-lg-block" v-if="cart.length > 0" style="top:-6px; right:-11px;">{{ cart.length }}</span>
+          <span class="badge text-white bg-danger position-absolute d-flex d-none d-lg-block navbar-badge-position" v-if="cart.length > 0">{{ cart.length }}</span>
           </RouterLink>
           </form>
         </div>

@@ -20,7 +20,7 @@
               <i class="bi bi-people-fill m-2 text-primary fs-1"></i>
               <div>
                 <h3 class="m-2 fw-bold">優質的旅遊行程</h3>
-                <p class="m-2" style="height: 3rem">
+                <p class="m-2 home-second-text">
                   所有行程皆為本公司專業團隊設計
                 </p>
               </div>
@@ -31,7 +31,7 @@
               <i class="bi bi-person-check-fill m-2 text-primary fs-1"></i>
               <div>
                 <h3 class="m-2 fw-bold">專業導遊同行</h3>
-                <p class="m-2" style="height: 3rem">
+                <p class="m-2 home-second-text">
                   專業導遊全程同行讓您的旅程不再走馬看花
                 </p>
               </div>
@@ -42,7 +42,7 @@
               <i class="bi bi-cash-coin m-2 text-primary fs-1"></i>
               <div>
                 <h3 class="m-2 fw-bold">合理的價格</h3>
-                <p class="m-2" style="height: 3rem">
+                <p class="m-2 home-second-text">
                   以合理的價格享受優質旅遊體驗
                 </p>
               </div>

@@ -46,7 +46,7 @@
             <div class="h5 ms-2 text-primary fw-bold" v-if="product.price">NTD {{ $filters.currency(product.price) }}</div>
           </div>
           <div class="d-flex justify-content-end align-items-center">
-            <div class="input-group mb-5" style="width:210px">
+            <div class="input-group mb-5 product-cart-input">
               <input type="number" class="form-control border-primary" v-model.number="qty" min="1">
               <button type="button" class="btn btn-primary" @click="addToCart(product.id, qty)">
                 <i class="bi bi-cart-fill pe-1"></i>加入購物車
@@ -57,7 +57,7 @@
         <div class="row d-flex justify-content-center bg-light py-5 my-5 rounded-2">
           <div class="col-lg-6">
             <h4 class="fw-bold text-primary"><i class="bi bi-globe pe-2"></i>行程特色</h4>
-            <div class="mt-3" style="line-height: 30px;" v-if="product.content">
+            <div class="mt-3 product-special-text" v-if="product.content">
               <template v-for="content in product.content.split('\n')" :key="content">
                 {{ content }} <br/>
               </template>

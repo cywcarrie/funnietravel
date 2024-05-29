@@ -72,11 +72,10 @@
           </div>
           <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3">
             <div class="col mb-4" v-for="item in products" :key="item.id">
-              <div class="card product-card w-100 h-100" style="width: 18rem">
+              <div class="card product-card w-100 h-100">
                 <RouterLink class="" :to="`/product/${item.id}`">
                   <div class="product-img cursor-pointer" @click="getProduct(item.id)">
                     <img
-                    style=" height: 180px; background-position: center"
                     :src="item.imageUrl"
                     class="card-img-top object-fit-cover"
                     alt="allProuctsImages"/>

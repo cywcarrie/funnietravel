@@ -39,7 +39,7 @@
                   </td>
                   <td class="text-nowrap">
                     <div class="d-flex justify-content-center">
-                      <div class="input-group input-group-sm" style="width:110px">
+                      <div class="input-group input-group-sm cart-qty">
                         <input type="number" class="form-control"
                         min="1"
                         :disabled="item.id === status.loadingItem"
@@ -76,7 +76,7 @@
             </table>
           </div>
           <div class="d-flex justify-content-end align-items-center">
-            <div class="input-group mb-3" style="max-width:400px" v-if="cart.total !== 0">
+            <div class="input-group mb-3 coupon-input" v-if="cart.total !== 0">
               <input type="text" class="form-control" v-model="coupon_code" placeholder="請輸入優惠碼">
               <button class="btn btn-primary" type="button" @click="addCouponCode">
                   套用優惠碼

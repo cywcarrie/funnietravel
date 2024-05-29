@@ -32,9 +32,9 @@
               </thead>
               <tbody class="text-center">
               <tr class="table-nowrap" v-for="item in favoriteProduct" :key="item.id">
-                <td style="width: 200px">
-                <div class="m-auto rounded-2" style="height: 100px; background-size: cover; background-position: center center"
-                    :style="{backgroundImage: `url(${item.imageUrl})`}"></div>
+                <td class="favorite-table">
+                <div class="m-auto rounded-2 favorite-table-img"
+                :style="{backgroundImage: `url(${item.imageUrl})`}"></div>
                 </td>
                 <td class="text-nowrap fw-bold text-primary">{{ item.title }}</td>
                 <td class="text-nowrap">

@@ -58,9 +58,9 @@
         <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
           <p class="text-white">本網站僅供作為個人作品使用，非商業用途</p>
           <ul class="list-unstyled d-flex">
-            <li class="nav-item"><a class="text-white" href="#" @click.prevent=""><i style="font-size: 24px" class="bi bi-facebook"></i></a></li>
-            <li class="nav-item ms-3"><a class="text-white" href="#" @click.prevent=""><i style="font-size: 24px" class="bi bi-github"></i></a></li>
-            <li class="nav-item ms-3"><a class="text-white" href="#" @click.prevent="goToLogin" title="管理者登入"><i style="font-size: 24px" class="bi bi-person-circle"></i></a></li>
+            <li class="nav-item"><a class="text-white" href="#" @click.prevent=""><i class="bi bi-facebook footer-icon-size"></i></a></li>
+            <li class="nav-item ms-3"><a class="text-white" href="#" @click.prevent=""><i class="bi bi-github footer-icon-size"></i></a></li>
+            <li class="nav-item ms-3"><a class="text-white" href="#" @click.prevent="goToLogin" title="管理者登入"><i class="bi bi-person-circle footer-icon-size"></i></a></li>
           </ul>
         </div>
       </footer>

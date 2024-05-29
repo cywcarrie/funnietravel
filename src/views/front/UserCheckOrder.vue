@@ -16,7 +16,7 @@
       <div class="row justify-content-center align-items-center">
         <div class="col-md-10">
           <div class="d-flex justify-content-center align-items-center" v-if="order.is_paid === true">
-            <i class="bi bi-check-circle-fill fs-2 pe-2" style="color:#336B87;"></i>
+            <i class="bi bi-check-circle-fill fs-2 pe-2 text-primary"></i>
             <h2 class="fw-bold mb-0 text-primary">付款成功 !</h2>
           </div>
           <h6 class="fw-bold mt-4 mb-5 text-center" v-if="order.is_paid === true">感謝您的訂購，訂單明細將會寄送至您的電子信箱 !</h6>
