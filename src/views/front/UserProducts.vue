@@ -20,7 +20,7 @@
             class="list-group-item list-group-item-action fw-bold"
             aria-current="true"
             :class="{ active: category === '全部' }"
-            @click.prevent="goToCategory('全部')">
+            @click="goToCategory('全部')">
             <i class="bi bi-globe me-2 "></i>
             全部
             </button>
@@ -28,7 +28,7 @@
             type="button"
             class="list-group-item list-group-item-action fw-bold"
             :class="{ active: category === '峇里島' }"
-            @click.prevent="goToCategory('峇里島')">
+            @click="goToCategory('峇里島')">
             <i class="bi bi-globe me-2 "></i>
             峇里島
             </button>
@@ -36,7 +36,7 @@
             type="button"
             class="list-group-item list-group-item-action fw-bold"
             :class="{ active: category === '泰國' }"
-            @click.prevent="goToCategory('泰國')">
+            @click="goToCategory('泰國')">
             <i class="bi bi-globe me-2 "></i>
             泰國
             </button>
@@ -44,7 +44,7 @@
             type="button"
             class="list-group-item list-group-item-action fw-bold"
             :class="{ active: category === '新加坡' }"
-            @click.prevent="goToCategory('新加坡')">
+            @click="goToCategory('新加坡')">
             <i class="bi bi-globe me-2 "></i>
             新加坡
             </button>
@@ -52,7 +52,7 @@
             type="button"
             class="list-group-item list-group-item-action fw-bold"
             :class="{ active: category === '馬來西亞' }"
-            @click.prevent="goToCategory('馬來西亞')">
+            @click="goToCategory('馬來西亞')">
             <i class="bi bi-globe me-2 "></i>
             馬來西亞
             </button>

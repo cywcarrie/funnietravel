@@ -1,5 +1,5 @@
 <template>
-  <button type="button" class="btn btn-secondary top" v-show="scY > 500" @click.prevent="goTop">
+  <button type="button" class="btn btn-secondary top" v-show="scY > 500" @click="goTop">
     <i class="bi bi-caret-up-fill"></i>
   </button>
 </template>
