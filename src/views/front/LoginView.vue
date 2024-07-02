@@ -3,7 +3,7 @@
     <form class="row justify-content-center py-5 px-3"
       @submit.prevent="signIn">
       <div class="col-md-7 col-lg-4 bg-light p-5  rounded-2">
-        <h1 class="h3 mb-3 text-center font-weight-normal fw-bold text-primary"><i class="bi bi-person-circle pe-2"></i>管理者後台登入</h1>
+        <h2 class="h3 mb-3 text-center font-weight-normal fw-bold text-primary"><i class="bi bi-person-circle pe-2"></i>管理者後台登入</h2>
         <div class="mb-2">
           <label for="inputEmail" class="sr-only">Email</label>
           <input

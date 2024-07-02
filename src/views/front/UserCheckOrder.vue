@@ -16,10 +16,10 @@
       <div class="row justify-content-center align-items-center">
         <div class="col-md-10">
           <div class="d-flex justify-content-center align-items-center" v-if="order.is_paid === true">
-            <i class="bi bi-check-circle-fill fs-2 pe-2 text-primary"></i>
-            <h2 class="fw-bold mb-0 text-primary">付款成功 !</h2>
+            <i class="bi bi-check-circle-fill fs-2 pe-2 text-success"></i>
+            <h2 class="fw-bold mb-0 text-success">付款成功 !</h2>
           </div>
-          <h6 class="fw-bold mt-4 mb-5 text-center" v-if="order.is_paid === true">感謝您的訂購，訂單明細將會寄送至您的電子信箱 !</h6>
+          <p class="fs-5 fw-bold mt-4 mb-5 text-center" v-if="order.is_paid === true">感謝您的訂購，訂單明細將會寄送至您的電子信箱 !</p>
           <div class="my-5 row justify-content-center">
             <h3 class="text-center fw-bold mb-4">訂單明細</h3>
             <form class="col-lg-6" @submit.prevent="payOrder">
@@ -33,13 +33,13 @@
                 <tr v-for="item in order.products" :key="item.id">
                   <td class="text-center text-primary fw-bold">{{ item.product.title }}</td>
                   <td class="text-center text-nowrap">{{ item.qty }}/{{ item.product.unit }}</td>
-                  <td class="text-center text-nowrap" >{{ item.final_total }}</td>
+                  <td class="text-center text-nowrap" >{{ $filters.currency(item.final_total) }}</td>
                 </tr>
                 </tbody>
                 <tfoot>
                 <tr>
                   <td colspan="2" class="text-end text-nowrap">總計</td>
-                  <td class="fs-5 text-primary fw-bold text-nowrap">{{ order.total }}</td>
+                  <td class="fs-5 text-primary fw-bold text-nowrap">{{ $filters.currency(order.total) }}</td>
                 </tr>
                 </tfoot>
               </table>
@@ -66,7 +66,7 @@
                   <th>付款狀態</th>
                   <td>
                     <span v-if="!order.is_paid" class="text-nowrap text-danger">尚未付款</span>
-                    <span v-else class="text-primary fw-bold text-nowrap">付款完成</span>
+                    <span v-else class="text-success fw-bold text-nowrap">付款完成</span>
                   </td>
                 </tr>
                 </tbody>

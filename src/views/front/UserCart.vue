@@ -15,8 +15,16 @@
         </nav>
       <template  v-if="cart.total !== 0">
         <div class="d-flex justify-content-center mt-5">
-          <h1 class="fs-2 fw-bold">購物車清單</h1>
+          <h2 class="fs-2 fw-bold">購物車清單</h2>
         </div>
+        <div class="d-flex justify-content-between mt-4">
+            <RouterLink class="btn btn-outline-primary" to="/products/全部">繼續選購</RouterLink>
+            <button
+              type="button"
+              class="btn btn-outline-danger"
+              @click="deleteAllCart"><i class="bi bi-trash3 pe-1"></i>清空購物車
+            </button>
+          </div>
         <div class="row mt-4 mb-5 bg-light rounded-2 py-3">
           <div class="col table-responsive mt-4 mb-4">
             <table class="table align-middle text-center table-light table-borderless">
@@ -55,7 +63,7 @@
                     {{ $filters.currency(item.final_total) }}
                   </td>
                   <td>
-                    <button type="button" class="btn btn-outline-primary btn-sm"
+                    <button type="button" class="btn btn-outline-danger btn-sm"
                     :disabled="status.loadingItem === item.id"
                     @click="removeCartItem(item.id)">
                     <i class="bi bi-trash"></i>
@@ -64,21 +72,21 @@
                 </tr>
               </tbody>
               <tfoot>
-              <tr>
-                <td colspan="3" class="text-end fs-4">總計</td>
-                <td class="text-end fs-4 text-primary fw-bold">{{ $filters.currency(cart.total) }}</td>
-              </tr>
-              <tr v-if="cart.final_total !== cart.total">
-                <td colspan="3" class="text-end text-success fs-4">優惠價</td>
-                <td class="text-end text-success fs-4 fw-bold">{{ $filters.currency(cart.final_total) }}</td>
-              </tr>
+                <tr>
+                  <td colspan="3" class="text-end fs-4">總計</td>
+                  <td class="text-end fs-4 text-primary fw-bold">{{ $filters.currency(cart.total) }}</td>
+                </tr>
+                <tr v-if="cart.final_total !== cart.total">
+                  <td colspan="3" class="text-end text-success fs-4">優惠價</td>
+                  <td class="text-end text-success fs-4 fw-bold">{{ $filters.currency(cart.final_total) }}</td>
+                </tr>
               </tfoot>
             </table>
           </div>
           <div class="d-flex justify-content-end align-items-center">
             <div class="input-group mb-3 coupon-input" v-if="cart.total !== 0">
-              <input type="text" class="form-control" v-model="coupon_code" placeholder="請輸入優惠碼">
-              <button class="btn btn-primary" type="button" @click="addCouponCode">
+              <input type="text" class="form-control border-primary" v-model="coupon_code" placeholder="請輸入優惠碼">
+              <button class="btn btn-outline-primary" type="button" @click="addCouponCode">
                   套用優惠碼
               </button>
             </div>
@@ -88,12 +96,11 @@
           </div>
           <div class="d-flex justify-content-end align-items-center mb-4">
             <button @click="copyCouponCode" class="btn btn-outline-primary" type="button">
-              <span><i class="bi bi-clipboard-fill pe-2"></i><span>複製優惠碼</span></span>
+              <span><i class="bi bi-clipboard-fill pe-1"></i><span>複製優惠碼</span></span>
             </button>
           </div>
-          <div class="d-flex justify-content-between mt-4 mb-4" v-if="cart.total !== 0">
-            <RouterLink class="btn btn-outline-primary" to="/products/全部">繼續選購</RouterLink>
-            <RouterLink class="btn btn-primary ms-auto" to="/checkout">前往結帳</RouterLink>
+          <div class="text-end mt-4 mb-4" v-if="cart.total !== 0">
+            <RouterLink class="btn btn-primary" to="/checkout">前往結帳<i class="bi bi-caret-right-fill"></i></RouterLink>
           </div>
         </div>
       </template>
@@ -161,6 +168,20 @@ export default {
           this.getCart()
           this.emitter.emit('update-cart')
         }
+      }).catch(error => {
+        this.emitter.emit('push-message', {
+          style: 'danger',
+          title: `${error.response.data.message}`
+        })
+      })
+    },
+    deleteAllCart () {
+      const url = `${process.env.VUE_APP_API}api/${process.env.VUE_APP_PATH}/carts`
+      this.isLoading = true
+      this.$http.delete(url).then((response) => {
+        this.$httpMessageState(response, '清空購物車')
+        this.getCart()
+        this.isLoading = false
       }).catch(error => {
         this.emitter.emit('push-message', {
           style: 'danger',

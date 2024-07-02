@@ -15,7 +15,7 @@
       </div>
       <div class="row my-5 py-5 bg-light rounded-2">
         <div class="col-lg-7">
-          <h2 class="text-center fw-bold mb-4">行程明細</h2>
+          <h3 class="text-center fw-bold mb-4">行程明細</h3>
           <div class="table-responsive-md mb-5 mb-lg-0">
             <table class="table align-middle table-light table-borderless">
               <thead class="text-center table-secondary">
@@ -49,7 +49,7 @@
           </div>
         </div>
         <div class="row col-lg-5">
-          <h2 class="text-center fw-bold mb-4">訂購人資訊</h2>
+          <h3 class="text-center fw-bold mb-4">訂購人資訊</h3>
           <FormVue v-slot="{ errors }"
                 @submit="createOrder">
             <div class="mb-3">
