@@ -53,6 +53,7 @@ export default {
           if (response.data.success) {
             const { token, expired } = response.data
             document.cookie = `hexToken=${token}; expires=${new Date(expired)}`
+            this.$httpMessageState(response, '登入')
             this.$router.push('/dashboard/products')
           }
         }).catch(error => {

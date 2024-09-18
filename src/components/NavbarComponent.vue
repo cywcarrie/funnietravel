@@ -32,6 +32,7 @@ export default {
       const api = `${process.env.VUE_APP_API}logout`
       this.$http.post(api, this.user).then((response) => {
         if (response.data.success) {
+          this.$httpMessageState(response, '登出')
           this.$router.push('/login')
         }
       })
