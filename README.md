@@ -44,6 +44,12 @@ npm run serve
 npm run build
 ```
 
+### 部署專案
+
+```sh
+sh deploy.sh
+```
+
 ## 專案套件
 
 - vue - v3.2.13
