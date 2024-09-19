@@ -43,6 +43,20 @@ npm run build
 ```
 
 ## 專案套件
-- vue - ^3.2.13
-- vue-router - ^4.0.3
+- vue - v3.2.13
+- vue-router - v4.0.3
+- axios - v1.5.0
+- vue-axios - v3.5.2
+- vue-loading-overlay - v6.0
+- mitt - v3.0.1
+- aos - v2.3.4
+- swiper - v10.2.0
+- vee-validate - v4.11.3
+- vue3-marquee - v4.1.0
+- bootstrap - v5.3.1
+- bootstrap-icons - v1.10.5
+
+## 專案套件
+- Node.js - v18.16.1
+- npm - 9.5.1
 
