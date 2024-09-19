@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
     <div class="container-fluid">
-      <a class="navbar-brand text-white fw-bold" href="#">Funnie 後台</a>
+      <a class="navbar-brand text-white fw-bold me-auto d-flex align-items-center" href="#"><img src="../assets/img/logo.png" alt="funnie-logo" class="funnie-logo-img"/><h1 class="logo text-primary fs-2 fw-bolder mb-0 px-2 me-5">Funnie</h1></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -15,10 +15,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <RouterLink to="/dashboard/products" class="nav-link text-white">產品</RouterLink>
-          <RouterLink to="/dashboard/orders" class="nav-link text-white">訂單</RouterLink>
-          <RouterLink to="/dashboard/coupons" class="nav-link text-white">優惠券</RouterLink>
-          <a href="#" @click.prevent="logout" class="nav-link text-white">登出</a>
+          <RouterLink to="/dashboard/products" class="nav-link text-primary fw-bold hover-nav">產品</RouterLink>
+          <RouterLink to="/dashboard/orders" class="nav-link text-primary fw-bold hover-nav">訂單</RouterLink>
+          <RouterLink to="/dashboard/coupons" class="nav-link text-primary fw-bold hover-nav">優惠券</RouterLink>
+          <a href="#" @click.prevent="logout" class="nav-link text-primary fw-bold hover-nav">登出</a>
         </div>
       </div>
     </div>
