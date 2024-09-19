@@ -1,4 +1,4 @@
-# funnietravel - 旅遊電商網站
+# Funnie Travel - 旅遊電商網站
 
 ## 專案說明
 ### Demo Website : [Link](https://cywcarrie.github.io/funnietravel/#/)
