@@ -31,7 +31,7 @@ Vue.js, Vue CLI, ESLint, Bootstrap 5, SCSS
    - Order management： Manage order functions by adding, removing, and modifying orders
    - Coupon management：Manage coupon functions by adding, removing, and modifying coupons
 
-  ## Project Setup
+## Project Setup
 
 ```sh
 npm install
