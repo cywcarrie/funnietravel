@@ -1,6 +1,6 @@
 # Funnie Travel - E-commerce website (Chinese)   
 
-## Introduction - Read this in other language: [中文](README.md)
+## Introduction - Read this in other language: [繁體中文](README.md)
 
 ### Demo Website : [Link](https://cywcarrie.github.io/funnietravel/#/)
 
