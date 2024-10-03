@@ -52,6 +52,7 @@
     </swiper-slide>
   </swiper>
 </template>
+
 <script>
 import { Pagination, A11y, Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/vue'
