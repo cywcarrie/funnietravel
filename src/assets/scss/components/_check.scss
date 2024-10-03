@@ -1,4 +1,17 @@
 .pay-header.active{
-  color: #336b87 !important;
+  color: #000000 !important;
   font-size: 24px;
+}
+.normal-input {
+  &.error {
+    input {
+      border: 1px solid $danger;
+    }
+
+    .error-text {
+      opacity: 1;
+      margin-top: 0;
+      font-size: 0.875em;
+    }
+  }
 }

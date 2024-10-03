@@ -18,7 +18,7 @@
           <h2 class="fs-2 fw-bold">購物車清單</h2>
         </div>
         <div class="d-flex justify-content-between mt-4">
-            <RouterLink class="btn btn-outline-primary" to="/products/全部">繼續選購</RouterLink>
+            <RouterLink class="btn btn-outline-primary" to="/products/全部"><i class="bi bi-cart pe-1"></i>繼續選購</RouterLink>
             <button
               type="button"
               class="btn btn-outline-danger"
@@ -234,7 +234,7 @@ export default {
       navigator.clipboard.writeText(text)
         .then(() => {
           this.emitter.emit('push-message', {
-            style: 'primary',
+            style: 'success',
             title: '優惠碼複製成功'
           })
         })

@@ -157,7 +157,7 @@ export default {
       this.emitter.emit('update-favorite')
       this.isLoading = false
       this.emitter.emit('push-message', {
-        style: 'secondary',
+        style: 'success',
         title: '已從我的最愛移除'
       })
     }

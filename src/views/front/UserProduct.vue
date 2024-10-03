@@ -174,13 +174,13 @@ export default {
       if (favoriteId === -1) {
         this.favoriteData.push(id)
         this.emitter.emit('push-message', {
-          style: 'primary',
+          style: 'success',
           title: '已加入我的最愛'
         })
       } else {
         this.favoriteData.splice(favoriteId, 1)
         this.emitter.emit('push-message', {
-          style: 'secondary',
+          style: 'success',
           title: '已從我的最愛移除'
         })
       }

@@ -15,7 +15,7 @@
       </div>
       <div class="row justify-content-center align-items-center">
         <div class="col-md-10">
-          <div class="d-flex justify-content-center align-items-center" v-if="order.is_paid === true">
+          <div class="d-flex justify-content-center align-items-center mt-5" v-if="order.is_paid === true">
             <i class="bi bi-check-circle-fill fs-2 pe-2 text-success"></i>
             <h2 class="fw-bold mb-0 text-success">付款成功 !</h2>
           </div>
@@ -49,12 +49,12 @@
               <table class="table table-light table-borderless mb-4">
                 <tbody>
                 <tr class="table-nowrap">
-                  <th width="100" class="text-nowrap">Email</th>
-                  <td class="text-nowrap">{{ order.user.email }}</td>
-                </tr>
-                <tr class="table-nowrap">
                   <th class="text-nowrap">姓名</th>
                   <td class="text-nowrap">{{ order.user.name }}</td>
+                </tr>
+                <tr class="table-nowrap">
+                  <th width="100" class="text-nowrap">Email</th>
+                  <td class="text-nowrap">{{ order.user.email }}</td>
                 </tr>
                 <tr class="table-nowrap">
                   <th class="text-nowrap">電話</th>
@@ -63,6 +63,10 @@
                 <tr class="table-nowrap">
                   <th>地址</th>
                   <td class="text-nowrap">{{ order.user.address }}</td>
+                </tr>
+                <tr class="table-nowrap">
+                  <th>付款方式</th>
+                  <td class="text-nowrap">{{ order.user.pay }}</td>
                 </tr>
                 <tr class="table-nowrap">
                   <th>付款狀態</th>
@@ -77,7 +81,7 @@
                 <button class="btn btn-primary ms-auto" type="submit">確認付款<i class="bi bi-caret-right-fill"></i></button>
               </div>
               <div class="text-end" v-if="order.is_paid === true">
-                <RouterLink to="/products/全部" class="btn btn-primary ms-auto">繼續選購</RouterLink>
+                <RouterLink to="/products/全部" class="btn btn-primary ms-auto"><i class="bi bi-cart pe-1"></i>繼續選購</RouterLink>
               </div>
             </form>
           </div>

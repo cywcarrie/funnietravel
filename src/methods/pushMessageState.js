@@ -3,7 +3,7 @@ import emitter from '@/methods/emitter'
 export default function (response, title = '更新') {
   if (response.data.success) {
     emitter.emit('push-message', {
-      style: 'primary',
+      style: 'success',
       title: `${title}成功`
     })
   } else {
