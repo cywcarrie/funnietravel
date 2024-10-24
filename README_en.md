@@ -12,7 +12,7 @@ Vue.js, Vue CLI, ESLint, Bootstrap 5, SCSS
 
 ## Key Contributions
 
-- Create a project using Vue 3 and Vue CLI.
+- Created a project using Vue 3 and Vue CLI.
 - Integrated Vue Router and Vue Axios, enhancing route management and streamlining API requests, which led to a more intuitive user navigation experience.
 - Configured ESLint to adhere to Standard specifications, ensuring robust code quality and maintainability throughout the project lifecycle.
 - Employed Bootstrap 5 and SCSS to design a responsive interface that significantly improved user experience, based on user feedback and testing insights.
